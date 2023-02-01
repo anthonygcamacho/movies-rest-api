@@ -1,19 +1,16 @@
-const express = require("express")
-const path = require("path")
-const cookieParser = require("cookie-parser")
-const logger = require("morgan")
-const helmet = require("helmet")
-const cors = require("cors")
+import express from "express"
+// import path from "path"
+// import cookieParser from "cookie-parser"
+// import logger from "morgan"
+// import helmet from "helmet"
+// import cors from "cors"
 
 // const indexRouter = require("./routes/index")
 // const usersRouter = require("./routes/users")
 
 // // ------------------------------------------------------------------
 
-// const app = express()
-
-
-
+const app = express()
 
 // // Security
 // app.use(helmet())
@@ -30,4 +27,4 @@ const cors = require("cors")
 // app.use("/", indexRouter)
 // app.use("/users", usersRouter)
 
-// module.exports = app
+export { app }
