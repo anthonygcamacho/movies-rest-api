@@ -3,12 +3,12 @@
 const path = require("path")
 const fs = require("fs")
 const wait = require("wait")
-const db = require("../db")
+const db = require("../src/db")
 const { seedingOrder } = require("./seeding-order")
 
 // -----------------------------------------------------------------------------
 
-let dbCreatePath = path.join(__dirname, "..", "..", "db_create")
+let dbCreatePath = path.join(__dirname)
 
 async function seedDB() {
     for (let i = 0; i < seedingOrder.length; i++) {

@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "seed_db": "node db/seeding.js",
+        "seed_db": "node seed_db/index.js",
         "start:build": "tsc -w",
         "start:run": "nodemon build/bin/www.js",
         "start": "concurrently npm:start:*"

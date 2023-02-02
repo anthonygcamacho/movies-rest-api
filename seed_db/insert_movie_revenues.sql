@@ -1,5 +1,5 @@
-INSERT INTO movie_revenues (revenue_id, movie_id, domestic_takings, international_takings) VALUES ('1','45','22.2','1.3'),
-('2','13','199.4','201.2'),
+INSERT INTO movie_revenues (revenue_id, movie_id, domestic_takings, international_takings) VALUES ('1','45',22.2,1.3),
+('2','13',199.4,201.2),
 ('3','23','102.1',null),
 ('4','44','158.7',null),
 ('6','1','27.1',null),

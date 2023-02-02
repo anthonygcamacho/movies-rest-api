@@ -49,8 +49,8 @@ Create the movie_revenues
 CREATE TABLE movie_revenues (
 	revenue_id SERIAL PRIMARY KEY,
 	movie_id INT REFERENCES movies (movie_id),
-	domestic_takings NUMERIC(6,2),
-	international_takings NUMERIC(6,2)
+	domestic_takings DECIMAL(6,2),
+	international_takings DECIMAL(6,2)
 );
 
 /*
