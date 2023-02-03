@@ -36,10 +36,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getActorsController = void 0;
+exports.getActorController = void 0;
 var pg_promise_1 = require("pg-promise");
 var db_1 = require("../../../db");
-var getActorsController = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+var getActorController = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var getActors, response, err_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -64,4 +64,4 @@ var getActorsController = function (req, res) { return __awaiter(void 0, void 0,
         }
     });
 }); };
-exports.getActorsController = getActorsController;
+exports.getActorController = getActorController;

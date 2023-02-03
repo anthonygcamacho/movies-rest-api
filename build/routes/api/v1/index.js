@@ -12,13 +12,17 @@ router.use("/actors", actors_1.default);
 exports.default = router;
 /*
 
+https://www.youtube.com/watch?v=huwyAP75bUs
+https://www.youtube.com/watch?v=ch_8h1RQ3Jg
+https://www.youtube.com/watch?v=2i6_Ibk7b7I
+
 /actors
 /actors/:actorID
 /actors/:actorID/movies
-/actors/:actorID/movies/:movieID
 
 /directors
 /directors/:directorID
+/directors/:directorID/movies
 
 /movies
 /movies/:movieID

@@ -36,22 +36,24 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getActorsController = void 0;
+exports.getActorController = void 0;
 var pg_promise_1 = require("pg-promise");
 var db_1 = require("../../../db");
-var getActorsController = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var getActors, response, err_1;
+var getActorController = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var actorID, getActorByID, response, err_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                getActors = new pg_promise_1.PreparedStatement({
+                actorID = req.params.actor_id;
+                getActorByID = new pg_promise_1.PreparedStatement({
                     name: "get-actors",
                     text: "SELECT * FROM actors",
+                    values: [actorID]
                 });
                 _a.label = 1;
             case 1:
                 _a.trys.push([1, 3, , 4]);
-                return [4 /*yield*/, db_1.db.many(getActors)];
+                return [4 /*yield*/, db_1.db.many(getActorByID)];
             case 2:
                 response = _a.sent();
                 res.status(200).json(response);
@@ -64,4 +66,4 @@ var getActorsController = function (req, res) { return __awaiter(void 0, void 0,
         }
     });
 }); };
-exports.getActorsController = getActorsController;
+exports.getActorController = getActorController;

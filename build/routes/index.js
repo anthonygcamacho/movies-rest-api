@@ -9,4 +9,16 @@ var pages_1 = __importDefault(require("./pages"));
 var router = express_1.default.Router();
 router.use("/api/v1", v1_1.default);
 router.use("/", pages_1.default);
+router.use(function (req, res, next) {
+    var error = new Error("Not found");
+    error.status = 404;
+    next(error);
+});
+router.use(function (error, req, res, next) {
+    res.status(error.status || 500).send({
+        error: {
+            message: error.message,
+        },
+    });
+});
 exports.default = router;

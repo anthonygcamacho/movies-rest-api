@@ -19,10 +19,10 @@ https://www.youtube.com/watch?v=2i6_Ibk7b7I
 /actors
 /actors/:actorID
 /actors/:actorID/movies
-/actors/:actorID/movies/:movieID
 
 /directors
 /directors/:directorID
+/directors/:directorID/movies
 
 /movies
 /movies/:movieID

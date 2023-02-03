@@ -1,10 +1,12 @@
 import express from "express"
-import { actorsController } from "../../../controllers/api/v1/actors.controller"
+import { getActorsController } from "../../../controllers/api/v1/getActors.controller"
+import { getActorByIDController } from "../../../controllers/api/v1/getActorsByID.controller"
 
 const router = express.Router()
 
 // -------------------------------------------------------------------------------
 
-router.get("/", actorsController)
+router.get("/", getActorsController)
+router.get("/:actor_id", getActorByIDController)
 
 export default router
