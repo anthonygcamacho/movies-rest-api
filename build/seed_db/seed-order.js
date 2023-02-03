@@ -1,4 +1,4 @@
-const seedingOrder = [
+const seedOrder = [
     "create.sql",
     "insert_actors.sql",
     "insert_directors.sql",
@@ -7,4 +7,4 @@ const seedingOrder = [
     "insert_movies_actors.sql",
 ]
 
-module.exports = { seedingOrder }
+module.exports = { seedOrder }

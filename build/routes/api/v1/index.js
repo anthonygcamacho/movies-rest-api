@@ -5,8 +5,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
 var healthcheck_1 = __importDefault(require("./healthcheck"));
+var actors_1 = __importDefault(require("./actors"));
 var router = express_1.default.Router();
-router.use('/healthcheck', healthcheck_1.default);
+router.use("/healthcheck", healthcheck_1.default);
+router.use("/actors", actors_1.default);
 exports.default = router;
 /*
 
@@ -24,4 +26,4 @@ exports.default = router;
 /movies/:movieID/director
 /movies/:movieID/revenue
 
-*/ 
+*/
