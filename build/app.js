@@ -8,10 +8,21 @@ var express_1 = __importDefault(require("express"));
 // import path from "path"
 // import cookieParser from "cookie-parser"
 // import logger from "morgan"
-// import helmet from "helmet"
+var helmet_1 = __importDefault(require("helmet"));
 // import cors from "cors"
-// const indexRouter = require("./routes/index")
-// const usersRouter = require("./routes/users")
+var routes_1 = __importDefault(require("./routes"));
+// const { notFoundPage } = require('../../controllers/pages/404.controller')
 // // ------------------------------------------------------------------
 var app = (0, express_1.default)();
 exports.app = app;
+// // Security
+app.use((0, helmet_1.default)());
+// app.use(cors())
+// // App settings
+// app.use(logger("dev"))
+app.use(express_1.default.json());
+app.use(express_1.default.urlencoded({ extended: false }));
+// app.use(cookieParser())
+// app.use(express.static(path.join(__dirname, "public")))
+// Routes
+app.use('/', routes_1.default);
