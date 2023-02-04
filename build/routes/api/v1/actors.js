@@ -8,6 +8,6 @@ var getActors_controller_1 = require("../../../controllers/api/v1/getActors.cont
 var getActorsByID_controller_1 = require("../../../controllers/api/v1/getActorsByID.controller");
 var router = express_1.default.Router();
 // -------------------------------------------------------------------------------
-router.get("/:actor_id", getActorsByID_controller_1.getActorByIDController);
 router.get("/", getActors_controller_1.getActorsController);
+router.get("/:actor_id", getActorsByID_controller_1.getActorByIDController);
 exports.default = router;
