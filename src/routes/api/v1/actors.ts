@@ -6,7 +6,7 @@ const router = express.Router()
 
 // -------------------------------------------------------------------------------
 
-router.get("/", getActorsController)
 router.get("/:actor_id", getActorByIDController)
+router.get("/", getActorsController)
 
 export default router

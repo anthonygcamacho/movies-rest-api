@@ -40,13 +40,13 @@ exports.getActorByIDController = void 0;
 var pg_promise_1 = require("pg-promise");
 var db_1 = require("../../../db");
 var getActorByIDController = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var actorID, getActorByID, response, err_1;
+    var actorID, getActorByID, response, err_1, errorReport, statusCode;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 actorID = req.params.actor_id;
                 getActorByID = new pg_promise_1.PreparedStatement({
-                    name: "get-actors",
+                    name: "get-actors-by-id",
                     text: "SELECT * FROM actors WHERE actor_id = $1",
                     values: [actorID],
                 });
@@ -60,12 +60,25 @@ var getActorByIDController = function (req, res) { return __awaiter(void 0, void
                 return [3 /*break*/, 4];
             case 3:
                 err_1 = _a.sent();
-                console.log({
+                errorReport = {
                     message: err_1.message,
                     severity: err_1.severity,
                     queryName: err_1.query.name,
-                });
-                console.log("catch error", err_1);
+                };
+                statusCode = void 0;
+                if (errorReport.severity === "ERROR") {
+                    statusCode = 400;
+                }
+                else if (!errorReport.severity) {
+                    statusCode = 404;
+                }
+                if (statusCode && typeof statusCode === "number") {
+                    res.status(statusCode).json({
+                        error: {
+                            message: errorReport.message,
+                        },
+                    });
+                }
                 return [3 /*break*/, 4];
             case 4: return [2 /*return*/];
         }

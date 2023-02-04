@@ -7,23 +7,34 @@ export const getActorByIDController: RequestHandler = async (
     req,
     res
 ): Promise<void> => {
+    // const actorID = "1 OR (2=2)" // test for sql injection and error handling
     const actorID = req.params.actor_id
-    // const actorID = "1 OR (2=2)"
     const getActorByID = new PS({
-        name: "get-actors",
+        name: "get-actors-by-id",
         text: "SELECT * FROM actors WHERE actor_id = $1",
         values: [actorID],
     })
-
     try {
         const response = await db.one(getActorByID)
         res.status(200).json(response)
     } catch (err) {
-        console.log({
+        const errorReport = {
             message: (err as Error).message,
             severity: (err as Error).severity,
             queryName: (err as Error).query.name,
-        })
-        console.log("catch error", err)
+        }
+        let statusCode
+        if (errorReport.severity === "ERROR") {
+            statusCode = 400
+        } else if (!errorReport.severity) {
+            statusCode = 404
+        }
+        if (statusCode && typeof statusCode === "number") {
+            res.status(statusCode).json({
+                error: {
+                    message: errorReport.message,
+                },
+            })
+        }
     }
 }

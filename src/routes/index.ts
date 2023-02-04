@@ -19,7 +19,7 @@ router.use((req: Request, res: Response, next: NextFunction) => {
 
 router.use(
     (error: ErrorStatus, req: Request, res: Response, next: NextFunction) => {
-        res.status(error.status || 500).send({
+        res.status(error.status || 500).json({
             error: {
                 message: error.message,
             },

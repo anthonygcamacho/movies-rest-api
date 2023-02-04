@@ -3,7 +3,7 @@ import helmet from "helmet"
 import cors from "cors"
 // import path from "path"
 // import cookieParser from "cookie-parser"
-import logger from "morgan"
+import morgan from "morgan"
 
 import routes from "./routes"
 
@@ -16,9 +16,9 @@ app.use(helmet())
 app.use(cors())
 
 // // App settings
-app.use(logger("dev"))
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+app.use(morgan("dev"))
+// app.use(express.json())
+// app.use(express.urlencoded({ extended: false }))
 // app.use(cookieParser())
 // app.use(express.static(path.join(__dirname, "public")))
 
