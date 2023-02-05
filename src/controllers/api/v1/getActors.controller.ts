@@ -1,6 +1,8 @@
 import { RequestHandler } from "express"
 import { PreparedStatement as PS } from "pg-promise"
 import { db } from "../../../utils/dbconnect"
+import errorHandling from "../../../utils/errorHandling"
+import { isErrorHandlingGeneral } from "../../../types/ErrorHandlingGeneral.type"
 
 export const getActorsController: RequestHandler = async (
     req,
@@ -14,6 +16,8 @@ export const getActorsController: RequestHandler = async (
         const response = await db.many(getActors)
         res.status(200).json(response)
     } catch (err) {
-        console.log("catch error", err)
+        if (isErrorHandlingGeneral(err)) {
+            errorHandling.general(err, res)
+        }
     }
 }

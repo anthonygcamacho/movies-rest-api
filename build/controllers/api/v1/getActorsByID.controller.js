@@ -8,10 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getActorByIDController = void 0;
 const pg_promise_1 = require("pg-promise");
 const dbconnect_1 = require("../../../utils/dbconnect");
+const errorHandling_1 = __importDefault(require("../../../utils/errorHandling"));
+const ErrorHandlingGeneral_type_1 = require("../../../types/ErrorHandlingGeneral.type");
 const getActorByIDController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     // const actorID = "1 OR (2=2)" // test for sql injection and error handling
     const actorID = req.params.actor_id;
@@ -25,24 +30,8 @@ const getActorByIDController = (req, res) => __awaiter(void 0, void 0, void 0, f
         res.status(200).json(response);
     }
     catch (err) {
-        const errorReport = {
-            message: err.message,
-            severity: err.severity,
-            queryName: err.query.name,
-        };
-        let statusCode;
-        if (errorReport.severity === "ERROR") {
-            statusCode = 400;
-        }
-        else if (!errorReport.severity) {
-            statusCode = 404;
-        }
-        if (statusCode && typeof statusCode === "number") {
-            res.status(statusCode).json({
-                error: {
-                    message: errorReport.message,
-                },
-            });
+        if ((0, ErrorHandlingGeneral_type_1.isErrorHandlingGeneral)(err)) {
+            errorHandling_1.default.general(err, res);
         }
     }
 });

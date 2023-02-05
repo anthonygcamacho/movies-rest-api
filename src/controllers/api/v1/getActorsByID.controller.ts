@@ -1,7 +1,8 @@
 import { RequestHandler } from "express"
 import { PreparedStatement as PS } from "pg-promise"
 import { db } from "../../../utils/dbconnect"
-import { Error } from "../../../types/Error.type"
+import errorHandling from "../../../utils/errorHandling"
+import { isErrorHandlingGeneral } from "../../../types/ErrorHandlingGeneral.type"
 
 export const getActorByIDController: RequestHandler = async (
     req,
@@ -18,23 +19,8 @@ export const getActorByIDController: RequestHandler = async (
         const response = await db.one(getActorByID)
         res.status(200).json(response)
     } catch (err) {
-        const errorReport = {
-            message: (err as Error).message,
-            severity: (err as Error).severity,
-            queryName: (err as Error).query.name,
-        }
-        let statusCode
-        if (errorReport.severity === "ERROR") {
-            statusCode = 400
-        } else if (!errorReport.severity) {
-            statusCode = 404
-        }
-        if (statusCode && typeof statusCode === "number") {
-            res.status(statusCode).json({
-                error: {
-                    message: errorReport.message,
-                },
-            })
+        if (isErrorHandlingGeneral(err)) {
+            errorHandling.general(err, res)
         }
     }
 }

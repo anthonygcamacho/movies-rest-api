@@ -7,18 +7,23 @@ const router = express.Router()
 router.use("/api/v1", apiRoutes)
 router.use("/", pageRoutes)
 
-interface ErrorStatus extends Error {
+interface ErrorWithStatus extends Error {
     status: number
 }
 
 router.use((req: Request, res: Response, next: NextFunction) => {
-    const error = new Error("Not found") as ErrorStatus
+    const error = new Error("Not found") as ErrorWithStatus
     error.status = 404
     next(error)
 })
 
 router.use(
-    (error: ErrorStatus, req: Request, res: Response, next: NextFunction) => {
+    (
+        error: ErrorWithStatus,
+        req: Request,
+        res: Response,
+        next: NextFunction
+    ) => {
         res.status(error.status || 500).json({
             error: {
                 message: error.message,
