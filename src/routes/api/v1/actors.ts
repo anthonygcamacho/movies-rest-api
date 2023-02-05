@@ -6,6 +6,9 @@ import { getActorByIDController } from "../../../controllers/api/v1/getActorsByI
 
 const router = express.Router()
 
+/**
+ *
+ */
 router.get("/", getActorsController)
 router.get("/:actor_id", getActorByIDController)
 

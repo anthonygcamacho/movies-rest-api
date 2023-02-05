@@ -1,10 +1,14 @@
 require("dotenv").config()
+import { IMain } from "pg-promise"
 
 const initOptions = {}
-const pgp = require("pg-promise")(initOptions)
+const pgp: IMain = require("pg-promise")(initOptions)
 
 // -------------------------------------------------------------------------------
 
-const cn = process.env.DATABASE_URL
+let cn
+if (typeof process.env.DATABASE_URL === "string") {
+    cn = process.env.DATABASE_URL
+}
 
-export const db = pgp(cn)
+export const db = pgp(cn as string)
