@@ -1,15 +1,12 @@
 import express, { Request, Response, NextFunction } from "express"
 import apiRoutes from "./api/v1"
 import pageRoutes from "./pages"
+import { ErrorWithStatus } from "../types/ErrorWithStatus"
 
 const router = express.Router()
 
 router.use("/api/v1", apiRoutes)
 router.use("/", pageRoutes)
-
-interface ErrorWithStatus extends Error {
-    status: number
-}
 
 router.use((req: Request, res: Response, next: NextFunction) => {
     const error = new Error("Not found") as ErrorWithStatus
