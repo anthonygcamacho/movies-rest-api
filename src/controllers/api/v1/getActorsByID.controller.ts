@@ -1,6 +1,6 @@
 import { RequestHandler } from "express"
 import { PreparedStatement as PS } from "pg-promise"
-import { db } from "../../../db"
+import { db } from "../../../utils/dbconnect"
 import { Error } from "../../../types/Error.type"
 
 export const getActorByIDController: RequestHandler = async (

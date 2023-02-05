@@ -7,9 +7,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Module dependencies.
  */
-var app_1 = require("../app");
-var debug_1 = __importDefault(require("debug"));
-var http_1 = __importDefault(require("http"));
+const app_1 = require("../app");
+const debug_1 = __importDefault(require("debug"));
+const http_1 = __importDefault(require("http"));
 (0, debug_1.default)("server:server");
 /**
  * Get port from environment and store in Express.
@@ -23,8 +23,8 @@ var server = http_1.default.createServer(app_1.app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-server.listen(port, function () {
-    console.log("Listening on: http://localhost:".concat(port));
+server.listen(port, () => {
+    console.log(`Listening on: http://localhost:${port}`);
 });
 server.on("error", onError);
 server.on("listening", onListening);
@@ -32,7 +32,7 @@ server.on("listening", onListening);
  * Normalize a port into a number, string, or false.
  */
 function normalizePort(val) {
-    var port;
+    let port;
     if (typeof val === "string") {
         port = parseInt(val, 10);
     }
@@ -73,7 +73,7 @@ function onError(error) {
  */
 function onListening() {
     var addr = server.address();
-    var bind;
+    let bind;
     if (addr) {
         if (typeof addr === "string") {
             bind = "pipe " + addr;

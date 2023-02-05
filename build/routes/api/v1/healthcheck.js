@@ -6,9 +6,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var express_1 = __importDefault(require("express"));
-var healthcheck_controller_1 = require("../../../controllers/api/v1/healthcheck.controller");
-var router = express_1.default.Router();
+const express_1 = __importDefault(require("express"));
+const healthcheck_controller_1 = require("../../../controllers/api/v1/healthcheck.controller");
+const router = express_1.default.Router();
 // -------------------------------------------------------------------------------
-router.get("/status", healthcheck_controller_1.healthCheckController);
+/**
+ * @openapi
+ * /api/v1/healthcheck:
+ *   get:
+ *     tags:
+ *     - Healthcheck
+ *     description: Responds if the app is up and running
+ *     responses:
+ *       200:
+ *         description: App is up and running
+ */
+router.get("/", healthcheck_controller_1.healthCheckController);
 exports.default = router;

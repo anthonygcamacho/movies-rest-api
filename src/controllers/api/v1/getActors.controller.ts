@@ -1,6 +1,6 @@
 import { RequestHandler } from "express"
 import { PreparedStatement as PS } from "pg-promise"
-import { db } from "../../../db"
+import { db } from "../../../utils/dbconnect"
 
 export const getActorsController: RequestHandler = async (
     req,
