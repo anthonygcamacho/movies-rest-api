@@ -1,5 +1,5 @@
 // import { AppRouter } from "../../appRouter"
-import express from 'express'
+import express from "express"
 
 import { homeController } from "../../controllers/pages/home"
 
@@ -8,6 +8,8 @@ import { homeController } from "../../controllers/pages/home"
 // const { privacyPage } = require('../../controllers/pages/privacy.controller')
 // const { tosPage } = require('../../controllers/pages/tos.controller')
 // const { sitemapPage } = require('../../controllers/pages/sitemap.controller')
+
+// -------------------------------------------------------------------------------
 
 // const router = AppRouter.getInstance()
 const router = express.Router()

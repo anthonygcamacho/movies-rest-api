@@ -17,6 +17,7 @@ const pg_promise_1 = require("pg-promise");
 const dbconnect_1 = require("../../../utils/dbconnect");
 const errorHandling_1 = __importDefault(require("../../../utils/errorHandling"));
 const ErrorHandlingGeneral_type_1 = require("../../../types/ErrorHandlingGeneral.type");
+// -------------------------------------------------------------------------------
 const getActorByIDController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     // const actorID = "1 OR (2=2)" // test for sql injection and error handling
     const actorID = req.params.actor_id;

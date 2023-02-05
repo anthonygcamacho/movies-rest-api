@@ -8,6 +8,7 @@ const healthcheck_1 = __importDefault(require("./healthcheck"));
 const actors_1 = __importDefault(require("./actors"));
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 const swagger_1 = require("../../../utils/swagger");
+// -------------------------------------------------------------------------------
 const router = express_1.default.Router();
 // Swagger page
 router.use("/docs", swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swagger_1.swaggerSpec));

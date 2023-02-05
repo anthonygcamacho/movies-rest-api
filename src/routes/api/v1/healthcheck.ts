@@ -5,9 +5,9 @@
 import express from "express"
 import { healthCheckController } from "../../../controllers/api/v1/healthcheck.controller"
 
-const router = express.Router()
-
 // -------------------------------------------------------------------------------
+
+const router = express.Router()
 
 /**
  * @openapi

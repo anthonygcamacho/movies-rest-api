@@ -1,6 +1,8 @@
 import { Response } from "express"
 import { ErrorHandlingGeneral } from "../types/ErrorHandlingGeneral.type"
 
+// -------------------------------------------------------------------------------
+
 const general = (err: ErrorHandlingGeneral, res: Response) => {
     const errorReport = {
         message: err.message,

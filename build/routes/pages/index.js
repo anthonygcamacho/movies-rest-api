@@ -11,6 +11,7 @@ const home_1 = require("../../controllers/pages/home");
 // const { privacyPage } = require('../../controllers/pages/privacy.controller')
 // const { tosPage } = require('../../controllers/pages/tos.controller')
 // const { sitemapPage } = require('../../controllers/pages/sitemap.controller')
+// -------------------------------------------------------------------------------
 // const router = AppRouter.getInstance()
 const router = express_1.default.Router();
 /**

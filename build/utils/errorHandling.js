@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+// -------------------------------------------------------------------------------
 const general = (err, res) => {
     const errorReport = {
         message: err.message,

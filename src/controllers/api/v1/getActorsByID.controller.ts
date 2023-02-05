@@ -4,6 +4,8 @@ import { db } from "../../../utils/dbconnect"
 import errorHandling from "../../../utils/errorHandling"
 import { isErrorHandlingGeneral } from "../../../types/ErrorHandlingGeneral.type"
 
+// -------------------------------------------------------------------------------
+
 export const getActorByIDController: RequestHandler = async (
     req,
     res

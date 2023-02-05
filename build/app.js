@@ -11,7 +11,7 @@ const cors_1 = __importDefault(require("cors"));
 // import cookieParser from "cookie-parser"
 const morgan_1 = __importDefault(require("morgan"));
 const routes_1 = __importDefault(require("./routes"));
-// // ------------------------------------------------------------------
+// -------------------------------------------------------------------------------
 const app = (0, express_1.default)();
 exports.app = app;
 // // Security

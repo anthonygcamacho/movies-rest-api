@@ -17,6 +17,7 @@ const pg_promise_1 = require("pg-promise");
 const dbconnect_1 = require("../../../utils/dbconnect");
 const errorHandling_1 = __importDefault(require("../../../utils/errorHandling"));
 const ErrorHandlingGeneral_type_1 = require("../../../types/ErrorHandlingGeneral.type");
+// -------------------------------------------------------------------------------
 const getActorsController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const getActors = new pg_promise_1.PreparedStatement({
         name: "get-actors",

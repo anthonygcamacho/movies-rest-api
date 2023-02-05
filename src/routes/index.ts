@@ -3,6 +3,8 @@ import apiRoutes from "./api/v1"
 import pageRoutes from "./pages"
 import { ErrorWithStatus } from "../types/ErrorWithStatus"
 
+// -------------------------------------------------------------------------------
+
 const router = express.Router()
 
 router.use("/api/v1", apiRoutes)
