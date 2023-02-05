@@ -1,11 +1,11 @@
 import { Response } from "express"
 import { ErrorHandlingGeneral } from "../types/ErrorHandlingGeneral.type"
 
-const general = (err: Error, res: Response) => {
+const general = (err: ErrorHandlingGeneral, res: Response) => {
     const errorReport = {
-        message: (err as ErrorHandlingGeneral).message,
-        severity: (err as ErrorHandlingGeneral).severity,
-        queryName: (err as ErrorHandlingGeneral).query.name,
+        message: err.message,
+        severity: err.severity,
+        queryName: err.query.name,
     }
     let statusCode
     if (errorReport.severity === "ERROR") {
