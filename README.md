@@ -37,6 +37,33 @@ Thank you for checking out what I can do with NodeJS. This is just an example ap
 | tx          | ase fegsa gegaag |
 | txIf        | ase fegsa gegaag |
 
+## SQL Cheatsheet
+
+### Common Data Types
+
+| Data Type          | Description                                  | Example Columns             |
+| ------------------ | -------------------------------------------- | --------------------------- |
+| SERIAL PRIMARY KEY | auto incrementing whole number               | id (primary key)            |
+| REFERENCES         | foreign key                                  | relationship to other table |
+| INT                | whole numbers                                | age, quantity               |
+| NUMERIC(P,S)       | decimal numbers                              | height, price               |
+| CHAR(N)            | fixed length string of length N              | gender, state               |
+| VARCHAR(N)         | varying length string of maximum length N    | name, email                 |
+| TEXT               | varying length string with no maximum length | comments, reviews           |
+| TIME               | hh:mm:ss                                     |                             |
+| DATE               | yyyy-mm-dd                                   | date of birth               |
+| TIMESTAMP          | yyyy-mm-dd hh:mm:ss                          | order time                  |
+| BOOLEAN            | true or false                                | in stock                    |
+| ENUM               | list of values input by the user             | gender                      |
+
+### Contraints
+
+| Contraints | Description                          | Example Columns            |
+| ---------- | ------------------------------------ | -------------------------- |
+| UNIQUE     | value must be unique across all rows | email address              |
+| NOT NULL   | value cannot be empty                | password                   |
+| CHECK      | creates a condition                  | between two dates, > value |
+
 ## Resources
 
 I always to keep a list of the amazing resources I found helpful in putting together some awesome:
