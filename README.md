@@ -6,36 +6,35 @@ Thank you for checking out what I can do with NodeJS. This is just an example ap
 
 ### In this application you will find these features:
 
-| Feature      | Description      |
-| :----------- | :--------------- |
-| Swagger      | ase fegsa gegaag |
-| Jest Testing | ase fegsa gegaag |
-| PG-Promise   | ase fegsa gegaag |
+| Feature          | Description                                      |
+| :--------------- | :----------------------------------------------- |
+| AWS RDS          | Using AWS Relational Database Service (Postgres) |
+| Swagger          | OpenAPI 3.0 standard api route documentation     |
+| TypeScript       | Code in TypeScript                               |
+| PG-Promise       | PostgreSQL interface for NodeJS                  |
+| Morgan           | Logging                                          |
+| Helmet / Cors    | Security                                         |
+| Jest Testing     | coming soon                                      |
+| Token Based Auth | coming soon                                      |
 
 ## PG-Promise Cheatsheet
 
-| Syntax      | Description      |
-| :---------- | :--------------- |
-| connect     | ase fegsa gegaag |
-| query       | ase fegsa gegaag |
-| none        | ase fegsa gegaag |
-| one         | ase fegsa gegaag |
-| many        | ase fegsa gegaag |
-| oneOrNone   | ase fegsa gegaag |
-| manyOrNone  | ase fegsa gegaag |
-| any         | ase fegsa gegaag |
-| result      | ase fegsa gegaag |
-| multiResult | ase fegsa gegaag |
-| multi       | ase fegsa gegaag |
-| stream      | ase fegsa gegaag |
-| func        | ase fegsa gegaag |
-| proc        | ase fegsa gegaag |
-| map         | ase fegsa gegaag |
-| each        | ase fegsa gegaag |
-| task        | ase fegsa gegaag |
-| taskIf      | ase fegsa gegaag |
-| tx          | ase fegsa gegaag |
-| txIf        | ase fegsa gegaag |
+### Common Methods
+
+[Database Methods](https://vitaly-t.github.io/pg-promise/Database.html)
+
+| Syntax      | Description                                                                                                                                            |
+| :---------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| any         | Executes a query that can return any number of rows. This is simply a shorter alias for method manyOrNone.                                             |
+| many        | Executes a query that expects one or more rows to be returned. When the query returns no rows, the method rejects.                                     |
+| manyOrNone  | Executes a query that can return any number of rows.                                                                                                   |
+| multi       | Executes a multi-query string, without any expectation for the return data, and resolves with an array of arrays of rows when successful.              |
+| multiResult | Executes a multi-query string, without any expectation for the return data, and resolves with an array of the original Result objects when successful. |
+| none        | Executes a query that expects no data to be returned. If the query returns any data, the method rejects.                                               |
+| one         | Executes a query that expects exactly 1 row to be returned. When 0 or more than 1 rows are returned, the method rejects.                               |
+| oneOrNone   | Executes a query that expects 0 or 1 rows to be returned. When the query returns more than 1 row, the method rejects.                                  |
+| query       | Base query method that executes a generic query, expecting the return data according to parameter qrm.                                                 |
+| result      | Executes a query without any expectation for the return data, and resolves with the original Result object when successful.                            |
 
 ## SQL Cheatsheet
 
