@@ -42,7 +42,7 @@ Thank you for checking out what I can do with NodeJS. This is just an example ap
 ### Common Data Types
 
 | Data Type          | Description                                  | Example Columns             |
-| ------------------ | -------------------------------------------- | --------------------------- |
+| :----------------- | :------------------------------------------- | :-------------------------- |
 | SERIAL PRIMARY KEY | auto incrementing whole number               | id (primary key)            |
 | REFERENCES         | foreign key                                  | relationship to other table |
 | INT                | whole numbers                                | age, quantity               |
@@ -59,13 +59,34 @@ Thank you for checking out what I can do with NodeJS. This is just an example ap
 ### Contraints
 
 | Contraints | Description                          | Example Columns            |
-| ---------- | ------------------------------------ | -------------------------- |
+| :--------- | :----------------------------------- | :------------------------- |
 | UNIQUE     | value must be unique across all rows | email address              |
 | NOT NULL   | value cannot be empty                | password                   |
 | CHECK      | creates a condition                  | between two dates, > value |
+
+## Common Status Codes
+
+| Code | Description           |
+| :--- | :-------------------- |
+| 200  | OK                    |
+| 201  | Created               |
+| 204  | No Content            |
+| 301  | Moved Permantly       |
+| 304  | Not Modified          |
+| 400  | Bad Request           |
+| 401  | Unauthorized          |
+| 402  | Payment Required      |
+| 403  | Forbidden             |
+| 404  | No Found              |
+| 409  | Conflict              |
+| 500  | Internal Server Error |
+| 502  | Bad Gateway           |
+| 504  | Gateway Timeout       |
 
 ## Resources
 
 I always to keep a list of the amazing resources I found helpful in putting together some awesome:
 
 [How to Document an Express API with Swagger UI and JSDoc](https://dev.to/kabartolo/how-to-document-an-express-api-with-swagger-ui-and-jsdoc-50do)
+
+[Learn HTTP Status Codes In 10 Minutes](https://www.youtube.com/watch?v=wJa5CTIFj7U)
