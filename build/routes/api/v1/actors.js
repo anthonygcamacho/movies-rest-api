@@ -17,7 +17,7 @@ const router = express_1.default.Router();
  *     summary: Get actors
  *     responses:
  *       200:
- *         description: A single actor
+ *         description: A list of actors
  *         content:
  *           application/json:
  *             schema:
@@ -34,15 +34,15 @@ const router = express_1.default.Router();
  *                         example: 1
  *                       first_name:
  *                         type: string
- *                         description: The actors first name
+ *                         description: The actor's first name
  *                         example: Mel
  *                       last_name:
  *                         type: string
- *                         description: The actors last name
+ *                         description: The actor's last name
  *                         example: Gibson
  *                       gender:
  *                         type: string
- *                         description: The actors gender
+ *                         description: The actor's gender
  *                         example: M
  *                       date_of_birth:
  *                         type: string

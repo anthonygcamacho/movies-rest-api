@@ -22,7 +22,7 @@ const getActorByIDController = (req, res) => __awaiter(void 0, void 0, void 0, f
     // const actorID = "1 OR (2=2)" // test for sql injection and error handling
     const actorID = req.params.actor_id;
     const getActorByID = new pg_promise_1.PreparedStatement({
-        name: "get-actor-by-id",
+        name: "get-actors-by-id",
         text: "SELECT * FROM actors WHERE actor_id = $1",
         values: [actorID],
     });

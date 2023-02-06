@@ -1,24 +1,44 @@
-Database {
-[run] connect: [Function (anonymous)],
-[run] query: [Function (anonymous)],
-[run] none: [Function (anonymous)],
-[run] one: [Function (anonymous)],
-[run] many: [Function (anonymous)],
-[run] oneOrNone: [Function (anonymous)],
-[run] manyOrNone: [Function (anonymous)],
-[run] any: [Function (anonymous)],
-[run] result: [Function (anonymous)],
-[run] multiResult: [Function (anonymous)],
-[run] multi: [Function (anonymous)],
-[run] stream: [Function (anonymous)],
-[run] func: [Function (anonymous)],
-[run] proc: [Function (anonymous)],
-[run] map: [Function (anonymous)],
-[run] each: [Function (anonymous)],
-[run] task: [Function (anonymous)],
-[run] taskIf: [Function (anonymous)],
-[run] tx: [Function (anonymous)],
-[run] txIf: [Function (anonymous)]
-[run] }
+### Movie Rest API - Demo
 
-https://dev.to/kabartolo/how-to-document-an-express-api-with-swagger-ui-and-jsdoc-50do
+Thank you for checking out what I can do with NodeJS. This is just an example application.
+
+## Special Features
+
+### In this application you will find these features:
+
+| Feature      | Description      |
+| ------------ | ---------------- |
+| Swagger      | ase fegsa gegaag |
+| Jest Testing | ase fegsa gegaag |
+| PG-Promise   | ase fegsa gegaag |
+
+## PG-Promise Cheatsheet
+
+| Syntax      | Description      |
+| ----------- | ---------------- |
+| connect     | ase fegsa gegaag |
+| query       | ase fegsa gegaag |
+| none        | ase fegsa gegaag |
+| one         | ase fegsa gegaag |
+| many        | ase fegsa gegaag |
+| oneOrNone   | ase fegsa gegaag |
+| manyOrNone  | ase fegsa gegaag |
+| any         | ase fegsa gegaag |
+| result      | ase fegsa gegaag |
+| multiResult | ase fegsa gegaag |
+| multi       | ase fegsa gegaag |
+| stream      | ase fegsa gegaag |
+| func        | ase fegsa gegaag |
+| proc        | ase fegsa gegaag |
+| map         | ase fegsa gegaag |
+| each        | ase fegsa gegaag |
+| task        | ase fegsa gegaag |
+| taskIf      | ase fegsa gegaag |
+| tx          | ase fegsa gegaag |
+| txIf        | ase fegsa gegaag |
+
+## Resources
+
+I always to keep a list of the amazing resources I found helpful in putting together some awesome:
+
+[How to Document an Express API with Swagger UI and JSDoc](https://dev.to/kabartolo/how-to-document-an-express-api-with-swagger-ui-and-jsdoc-50do)

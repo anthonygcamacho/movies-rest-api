@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const healthcheck_1 = __importDefault(require("./healthcheck"));
 const actors_1 = __importDefault(require("./actors"));
+const directors_1 = __importDefault(require("./directors"));
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 const swagger_1 = require("../../../utils/swagger");
 // -------------------------------------------------------------------------------
@@ -20,6 +21,8 @@ router.get("/docs.json", (req, res) => {
 router.use("/healthcheck", healthcheck_1.default);
 // Actors
 router.use("/actors", actors_1.default);
+// Direcotrs
+router.use("/directors", directors_1.default);
 exports.default = router;
 /*
 
