@@ -7,7 +7,7 @@ Thank you for checking out what I can do with NodeJS. This is just an example ap
 ### In this application you will find these features:
 
 | Feature      | Description      |
-| ------------ | ---------------- |
+| :----------- | :--------------- |
 | Swagger      | ase fegsa gegaag |
 | Jest Testing | ase fegsa gegaag |
 | PG-Promise   | ase fegsa gegaag |
@@ -15,7 +15,7 @@ Thank you for checking out what I can do with NodeJS. This is just an example ap
 ## PG-Promise Cheatsheet
 
 | Syntax      | Description      |
-| ----------- | ---------------- |
+| :---------- | :--------------- |
 | connect     | ase fegsa gegaag |
 | query       | ase fegsa gegaag |
 | none        | ase fegsa gegaag |
