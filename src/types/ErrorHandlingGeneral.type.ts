@@ -1,5 +1,4 @@
 export interface ErrorHandlingGeneral extends Error {
-    // message: string
     severity: string
     query: {
         name: string

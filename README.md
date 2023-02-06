@@ -20,3 +20,5 @@ Database {
 [run] tx: [Function (anonymous)],
 [run] txIf: [Function (anonymous)]
 [run] }
+
+https://dev.to/kabartolo/how-to-document-an-express-api-with-swagger-ui-and-jsdoc-50do

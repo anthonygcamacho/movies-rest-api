@@ -11,15 +11,20 @@ const healthcheck_controller_1 = require("../../../controllers/api/v1/healthchec
 // -------------------------------------------------------------------------------
 const router = express_1.default.Router();
 /**
- * @openapi
+ * @swagger
  * /api/v1/healthcheck:
  *   get:
  *     tags:
  *     - Healthcheck
- *     description: Responds if the app is up and running
+ *     summary: Responds if the app is up and running
+ *     description: Used for testing if the server up and running
  *     responses:
  *       200:
  *         description: App is up and running
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: string
  */
 router.get("/", healthcheck_controller_1.healthCheckController);
 exports.default = router;
