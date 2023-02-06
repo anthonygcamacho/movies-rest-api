@@ -8,14 +8,16 @@ Thank you for checking out what I can do with NodeJS. This is just an example ap
 
 | Feature          | Description                                      |
 | :--------------- | :----------------------------------------------- |
+| Express          | API Routing                                      |
+| Swagger          | OpenAPI 3.0 Standard API Route Documentation     |
+| TypeScript       | Coded in TypeScript                              |
 | AWS RDS          | Using AWS Relational Database Service (Postgres) |
-| Swagger          | OpenAPI 3.0 standard api route documentation     |
-| TypeScript       | Code in TypeScript                               |
-| PG-Promise       | PostgreSQL interface for NodeJS                  |
+| PG-Promise       | PostgreSQL Interface for NodeJS                  |
 | Morgan           | Logging                                          |
 | Helmet / Cors    | Security                                         |
-| Jest Testing     | coming soon                                      |
-| Token Based Auth | coming soon                                      |
+| Jest Testing     | Todo                                             |
+| Handlebars       | Todo                                             |
+| Token Based Auth | Todo                                             |
 
 ## PG-Promise Cheatsheet
 
