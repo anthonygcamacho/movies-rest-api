@@ -21,9 +21,9 @@ Thank you for checking out what I can do with NodeJS. This is just an example ap
 
 ### Common Methods
 
-[Database Methods](https://vitaly-t.github.io/pg-promise/Database.html)
+[DB Methods](https://vitaly-t.github.io/pg-promise/Database.html)
 
-| Syntax      | Description                                                                                                                                            |
+| Method      | Description                                                                                                                                            |
 | :---------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | any         | Executes a query that can return any number of rows. This is simply a shorter alias for method manyOrNone.                                             |
 | many        | Executes a query that expects one or more rows to be returned. When the query returns no rows, the method rejects.                                     |
@@ -40,7 +40,7 @@ Thank you for checking out what I can do with NodeJS. This is just an example ap
 
 ### Common Data Types
 
-| Data Type          | Description                                  | Example Columns             |
+| Data Type          | Description                                  | Example                     |
 | :----------------- | :------------------------------------------- | :-------------------------- |
 | SERIAL PRIMARY KEY | auto incrementing whole number               | id (primary key)            |
 | REFERENCES         | foreign key                                  | relationship to other table |
@@ -57,11 +57,11 @@ Thank you for checking out what I can do with NodeJS. This is just an example ap
 
 ### Contraints
 
-| Contraints | Description                          | Example Columns            |
-| :--------- | :----------------------------------- | :------------------------- |
-| UNIQUE     | value must be unique across all rows | email address              |
-| NOT NULL   | value cannot be empty                | password                   |
-| CHECK      | creates a condition                  | between two dates, > value |
+| Contraint | Description                          | Example                    |
+| :-------- | :----------------------------------- | :------------------------- |
+| UNIQUE    | value must be unique across all rows | email address              |
+| NOT NULL  | value cannot be empty                | password                   |
+| CHECK     | creates a condition                  | between two dates, > value |
 
 ## Common Status Codes
 
