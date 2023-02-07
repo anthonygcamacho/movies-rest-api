@@ -97,3 +97,7 @@ I always to keep a list of the amazing resources I found helpful in putting toge
 [How to Document an Express API with Swagger UI and JSDoc](https://dev.to/kabartolo/how-to-document-an-express-api-with-swagger-ui-and-jsdoc-50do)
 
 [Learn HTTP Status Codes In 10 Minutes](https://www.youtube.com/watch?v=wJa5CTIFj7U)
+
+[Introduction to SQL Developer Data Modeler](https://www.youtube.com/watch?v=wsVh1zLmQb0)
+
+[SQL Developer Data Modeler Just what you need](https://www.youtube.com/watch?v=NfrUy-TYP_8&t=1741s)
