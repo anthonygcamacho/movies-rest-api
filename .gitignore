@@ -1,2 +1,6 @@
 node_modules/
 .env
+**/*.localz
+**/*.local
+**/*.git
+**/*.DS_Store
