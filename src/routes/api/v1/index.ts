@@ -2,6 +2,7 @@ import express, { Request, Response } from "express"
 import healthcheck from "./healthcheck"
 import actors from "./actors"
 import directors from "./directors"
+import movies from "./movies"
 import swaggerUi from "swagger-ui-express"
 import { swaggerSpec } from "../../../utils/swagger"
 
@@ -25,6 +26,9 @@ router.use("/actors", actors)
 
 // Direcotrs
 router.use("/directors", directors)
+
+// Movies
+router.use("/movies", movies)
 
 export default router
 

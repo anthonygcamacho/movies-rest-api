@@ -1,6 +1,6 @@
 import express from "express"
 import { getActorsController } from "../../../controllers/api/v1/getActors.controller"
-import { getActorByIDController } from "../../../controllers/api/v1/getActorsByID.controller"
+import { getActorByIDController } from "../../../controllers/api/v1/getActorByID.controller"
 
 // -------------------------------------------------------------------------------
 

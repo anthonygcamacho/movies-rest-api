@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const healthcheck_1 = __importDefault(require("./healthcheck"));
 const actors_1 = __importDefault(require("./actors"));
 const directors_1 = __importDefault(require("./directors"));
+const movies_1 = __importDefault(require("./movies"));
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 const swagger_1 = require("../../../utils/swagger");
 // -------------------------------------------------------------------------------
@@ -23,6 +24,8 @@ router.use("/healthcheck", healthcheck_1.default);
 router.use("/actors", actors_1.default);
 // Direcotrs
 router.use("/directors", directors_1.default);
+// Movies
+router.use("/movies", movies_1.default);
 exports.default = router;
 /*
 
