@@ -19,6 +19,10 @@ Thank you for checking out what I can do with NodeJS. This is just an example ap
 | Handlebars       | Todo                                             |
 | Token Based Auth | Todo                                             |
 
+## Database Model
+
+![Movies REST API - Databasee](https://github.com/anthonygcamacho/movies-rest-api/blob/main/data-model.png?raw=true)
+
 ## PG-Promise Cheatsheet
 
 ### Common Methods
