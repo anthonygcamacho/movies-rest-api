@@ -21,6 +21,8 @@ Thank you for checking out what I can do with NodeJS. This is just an example ap
 
 ## Database Model
 
+[Modeled database using Oracle SQL Developer Data Modeler](https://www.oracle.com/database/sqldeveloper/technologies/sql-data-modeler/#:~:text=Oracle%20SQL%20Developer%20Data%20Modeler%20is%20a%20free%20graphical%20tool,dimensional%2C%20and%20data%20type%20models.)
+
 ![Movies REST API - Databasee](https://github.com/anthonygcamacho/movies-rest-api/blob/main/data-model.png?raw=true)
 
 ## PG-Promise Cheatsheet
