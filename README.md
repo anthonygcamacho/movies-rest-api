@@ -1,4 +1,4 @@
-### Movie Rest API - Demo
+# Movie Rest API - Demo
 
 Thank you for checking out what I can do with NodeJS. This is just an example application.
 
