@@ -80,34 +80,6 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="movie_id" id="C83A8D4B-8D17-54ED-5059-A467A513377A">
-<createdBy>18505</createdBy>
-<createdTime>2023-02-07 00:25:52 UTC</createdTime>
-<generatorID>7DC51A30-EC03-48D5-4938-6621114D0F31</generatorID>
-<ownerDesignName>data-model</ownerDesignName>
-<engineerTo>
-<item key="31F18DCB-D476-F253-308C-C16E89CE87D9" value="true"/>
-</engineerTo>
-<referedAttribute>4984B2FF-AEBF-601A-1AF5-49B7B64B0C8A</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="actor_id1" id="A886F580-BA90-9AD4-C3EA-A31C0F7648B8">
-<createdBy>18505</createdBy>
-<createdTime>2023-02-07 00:25:52 UTC</createdTime>
-<generatorID>7DC51A30-EC03-48D5-4938-6621114D0F31</generatorID>
-<ownerDesignName>data-model</ownerDesignName>
-<engineerTo>
-<item key="31F18DCB-D476-F253-308C-C16E89CE87D9" value="true"/>
-</engineerTo>
-<referedAttribute>9A1F7592-0D66-654D-5352-1D6EB28C6591</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="B1166382-6CF5-9B73-0969-AC71B15E5C47" name="actor_id">

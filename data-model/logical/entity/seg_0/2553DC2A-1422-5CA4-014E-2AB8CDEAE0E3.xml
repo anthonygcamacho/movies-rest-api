@@ -53,6 +53,20 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="actor_id1" id="FF5C66E0-F761-F950-1FA9-81E4A09B6AA3">
+<createdBy>18505</createdBy>
+<createdTime>2023-02-08 20:02:01 UTC</createdTime>
+<generatorID>42889D30-AAA1-382C-3561-93F56E4B9E78</generatorID>
+<ownerDesignName>data-model</ownerDesignName>
+<engineerTo>
+<item key="31F18DCB-D476-F253-308C-C16E89CE87D9" value="true"/>
+</engineerTo>
+<referedAttribute>B2F7072B-1E03-4E9F-2F36-46AEE52AED2E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="28F69B9E-25BF-C208-12AB-590512D06165" name="movies_actors PK">
