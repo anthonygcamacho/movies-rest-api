@@ -1,6 +1,8 @@
 import express from "express"
-import { getMoviesController } from "../../../controllers/api/v1/getMovies.controller"
-import { getMovieByIDController } from "../../../controllers/api/v1/getMovieByID.controller"
+import {
+    getMovieById,
+    getMovies,
+} from "../../../controllers/api/v1/movies.controller"
 
 // -------------------------------------------------------------------------------
 
@@ -55,7 +57,7 @@ const router = express.Router()
  *                         description: The director ID
  *                         example: 1
  */
-router.get("/", getMoviesController)
+router.get("/", getMovies)
 
 /**
  * @swagger
@@ -104,6 +106,6 @@ router.get("/", getMoviesController)
  *                       description: The director ID
  *                       example: 1
  */
-router.get("/:movie_id", getMovieByIDController)
+router.get("/:movie_id", getMovieById)
 
 export default router

@@ -1,6 +1,8 @@
 import express from "express"
-import { getDirectorsController } from "../../../controllers/api/v1/getDirectors.controller"
-import { getDirectorByIDController } from "../../../controllers/api/v1/getDirectorByID.controller"
+import {
+    getDirectorById,
+    getDirectors,
+} from "../../../controllers/api/v1/directors.controller"
 
 // -------------------------------------------------------------------------------
 
@@ -47,7 +49,7 @@ const router = express.Router()
  *                         direction: Nationality
  *                         example: American
  */
-router.get("/", getDirectorsController)
+router.get("/", getDirectors)
 
 /**
  * @swagger
@@ -88,6 +90,6 @@ router.get("/", getDirectorsController)
  *                       direction: Nationality
  *                       example: American
  */
-router.get("/:director_id", getDirectorByIDController)
+router.get("/:director_id", getDirectorById)
 
 export default router

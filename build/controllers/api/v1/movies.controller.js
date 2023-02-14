@@ -12,13 +12,32 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getMoviesController = void 0;
+exports.getMovies = exports.getMovieById = void 0;
 const pg_promise_1 = require("pg-promise");
 const dbconnect_1 = require("../../../utils/dbconnect");
 const errorHandling_1 = __importDefault(require("../../../utils/errorHandling"));
 const ErrorHandlingGeneral_type_1 = require("../../../types/ErrorHandlingGeneral.type");
 // -------------------------------------------------------------------------------
-const getMoviesController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const getMovieById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    // const actorID = "1 OR (2=2)" // test for sql injection and error handling
+    const movieID = req.params.movie_id;
+    const getMovieByID = new pg_promise_1.PreparedStatement({
+        name: "get-movie-by-id",
+        text: "SELECT * FROM movies WHERE movie_id = $1",
+        values: [movieID],
+    });
+    try {
+        const response = yield dbconnect_1.db.one(getMovieByID);
+        res.status(200).json(response);
+    }
+    catch (err) {
+        if ((0, ErrorHandlingGeneral_type_1.isErrorHandlingGeneral)(err)) {
+            errorHandling_1.default.general(err, res);
+        }
+    }
+});
+exports.getMovieById = getMovieById;
+const getMovies = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const getMovies = new pg_promise_1.PreparedStatement({
         name: "get-movies",
         text: "SELECT * FROM movies",
@@ -33,4 +52,4 @@ const getMoviesController = (req, res) => __awaiter(void 0, void 0, void 0, func
         }
     }
 });
-exports.getMoviesController = getMoviesController;
+exports.getMovies = getMovies;

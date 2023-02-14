@@ -1,6 +1,9 @@
 import express from "express"
-import { getActorsController } from "../../../controllers/api/v1/getActors.controller"
-import { getActorByIDController } from "../../../controllers/api/v1/getActorByID.controller"
+
+import {
+    getActorByID,
+    getActors,
+} from "../../../controllers/api/v1/actors.controller"
 
 // -------------------------------------------------------------------------------
 
@@ -47,7 +50,7 @@ const router = express.Router()
  *                         description: Birth date
  *                         example: 1978-05-12T07:00:00.000Z
  */
-router.get("/", getActorsController)
+router.get("/", getActors)
 
 /**
  * @swagger
@@ -88,6 +91,6 @@ router.get("/", getActorsController)
  *                       description: Birth date
  *                       example: 1978-05-12T07:00:00.000Z
  */
-router.get("/:actor_id", getActorByIDController)
+router.get("/:actor_id", getActorByID)
 
 export default router
