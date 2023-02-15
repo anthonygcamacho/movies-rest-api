@@ -1,7 +1,7 @@
 import express from "express"
 
 import {
-    getActorByID,
+    getActorById,
     getActors,
 } from "../../../controllers/api/v1/actors.controller"
 
@@ -91,6 +91,6 @@ router.get("/", getActors)
  *                       description: Birth date
  *                       example: 1978-05-12T07:00:00.000Z
  */
-router.get("/:actor_id", getActorByID)
+router.get("/:actorId", getActorById)
 
 export default router

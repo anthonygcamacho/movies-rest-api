@@ -1,0 +1,44 @@
+[
+    {
+        "actor_id": 8,
+        "first_name": "Adrien",
+        "last_name": "Brody",
+        "gender": "M",
+        "date_of_birth": "1973-04-14T08:00:00.000Z"
+    },
+    {
+        "actor_id": 9,
+        "first_name": "Peter",
+        "last_name": "Carlberg",
+        "gender": "M",
+        "date_of_birth": "1950-12-08T08:00:00.000Z"
+    },
+    {
+        "actor_id": 10,
+        "first_name": "Gemma",
+        "last_name": "Chan",
+        "gender": "F",
+        "date_of_birth": "1982-11-29T08:00:00.000Z"
+    },
+    {
+        "actor_id": 11,
+        "first_name": "Chen",
+        "last_name": "Chang",
+        "gender": "M",
+        "date_of_birth": "1976-10-14T07:00:00.000Z"
+    },
+    {
+        "actor_id": 12,
+        "first_name": "Graham",
+        "last_name": "Chapman",
+        "gender": "M",
+        "date_of_birth": "1941-01-08T08:00:00.000Z"
+    },
+    {
+        "actor_id": 13,
+        "first_name": "Pei-pei",
+        "last_name": "Cheng",
+        "gender": "F",
+        "date_of_birth": "1946-12-04T08:00:00.000Z"
+    }
+]

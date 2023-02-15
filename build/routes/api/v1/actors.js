@@ -88,5 +88,5 @@ router.get("/", actors_controller_1.getActors);
  *                       description: Birth date
  *                       example: 1978-05-12T07:00:00.000Z
  */
-router.get("/:actor_id", actors_controller_1.getActorByID);
+router.get("/:actorId", actors_controller_1.getActorById);
 exports.default = router;

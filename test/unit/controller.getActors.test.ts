@@ -1,11 +1,8 @@
 import { describe, expect, test } from "@jest/globals"
+import actorsController from "../../src/controllers/api/v1/actors.controller"
 
-function sum(a: number, b: number) {
-    return a + b
-}
-
-describe("two numbers added together", () => {
-    test("add two nums", () => {
-        expect(sum(1, 2)).toBe(3)
+describe("controller.getActors", () => {
+    test("getActors function is defined", () => {
+        expect(typeof actorsController.getActors).toBe("function")
     })
 })

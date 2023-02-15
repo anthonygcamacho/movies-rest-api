@@ -1,21 +1,15 @@
 import { RequestHandler } from "express"
-import { PreparedStatement as PS } from "pg-promise"
-import { db } from "../../../utils/dbconnect"
 import errorHandling from "../../../utils/errorHandling"
 import { isErrorHandlingGeneral } from "../../../types/ErrorHandlingGeneral.type"
+import actorsModel from "../../../models/actors.model"
 
 // -------------------------------------------------------------------------------
 
-export const getActorByID: RequestHandler = async (req, res): Promise<void> => {
-    // const actorID = "1 OR (2=2)" // test for sql injection and error handling
-    const actorID = req.params.actor_id
-    const getActorByID = new PS({
-        name: "get-actor-by-id",
-        text: "SELECT * FROM actors WHERE actor_id = $1",
-        values: [actorID],
-    })
+export const getActorById: RequestHandler = async (req, res): Promise<void> => {
     try {
-        const response = await db.one(getActorByID)
+        // const actorId = "1 OR (2=2)" // test for sql injection and error handling
+        const actorId = req.params.actorId
+        const response = await actorsModel.getActorById(actorId)
         res.status(200).json(response)
     } catch (err) {
         if (isErrorHandlingGeneral(err)) {
@@ -25,16 +19,17 @@ export const getActorByID: RequestHandler = async (req, res): Promise<void> => {
 }
 
 export const getActors: RequestHandler = async (req, res): Promise<void> => {
-    const getActors = new PS({
-        name: "get-actors",
-        text: "SELECT * FROM actors",
-    })
     try {
-        const response = await db.many(getActors)
+        const response = await actorsModel.getActors()
         res.status(200).json(response)
     } catch (err) {
         if (isErrorHandlingGeneral(err)) {
             errorHandling.general(err, res)
         }
     }
+}
+
+export default {
+    getActorById,
+    getActors,
 }
