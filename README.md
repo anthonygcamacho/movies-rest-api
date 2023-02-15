@@ -15,7 +15,7 @@ Thank you for checking out what I can do with NodeJS / Express. This is just an 
 | PG-Promise       | PostgreSQL Interface for NodeJS                  |
 | Morgan           | Logging                                          |
 | Helmet / Cors    | Security                                         |
-| Jest Testing     | Todo                                             |
+| Jest Testing     | Integration and Unit Tests                       |
 | Handlebars       | Todo                                             |
 | Token Based Auth | Todo                                             |
 
