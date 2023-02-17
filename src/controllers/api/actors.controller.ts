@@ -1,11 +1,11 @@
 import { RequestHandler } from "express"
-import errorHandling from "../../../utils/errorHandling"
-import { isErrorHandlingGeneral } from "../../../types/ErrorHandlingGeneral.type"
-import actorsModel from "../../../models/actors.model"
+import errorHandling from "../../utils/errorHandling"
+import { isErrorHandlingGeneral } from "../../types/ErrorHandlingGeneral.type"
+import actorsModel from "../../models/api/actors.model"
 
 // -------------------------------------------------------------------------------
 
-export const getActorById: RequestHandler = async (req, res): Promise<void> => {
+const getActorById: RequestHandler = async (req, res): Promise<void> => {
     try {
         // const actorId = "1 OR (2=2)" // test for sql injection and error handling
         const actorId = req.params.actorId
@@ -18,7 +18,7 @@ export const getActorById: RequestHandler = async (req, res): Promise<void> => {
     }
 }
 
-export const getActors: RequestHandler = async (req, res): Promise<void> => {
+const getActors: RequestHandler = async (req, res): Promise<void> => {
     try {
         const response = await actorsModel.getActors()
         res.status(200).json(response)

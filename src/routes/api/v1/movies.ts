@@ -2,7 +2,7 @@ import express from "express"
 import {
     getMovieById,
     getMovies,
-} from "../../../controllers/api/v1/movies.controller"
+} from "../../../controllers/api/movies.controller"
 
 // -------------------------------------------------------------------------------
 

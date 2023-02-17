@@ -7,7 +7,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const healthcheck_controller_1 = require("../../../controllers/api/v1/healthcheck.controller");
+const healthcheck_controller_1 = require("../../../controllers/api/healthcheck.controller");
 // -------------------------------------------------------------------------------
 const router = express_1.default.Router();
 /**

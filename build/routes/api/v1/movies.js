@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const movies_controller_1 = require("../../../controllers/api/v1/movies.controller");
+const movies_controller_1 = require("../../../controllers/api/movies.controller");
 // -------------------------------------------------------------------------------
 const router = express_1.default.Router();
 /**

@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const directors_controller_1 = require("../../../controllers/api/v1/directors.controller");
+const directors_controller_1 = __importDefault(require("../../../controllers/api/directors.controller"));
 // -------------------------------------------------------------------------------
 const router = express_1.default.Router();
 /**
@@ -48,7 +48,7 @@ const router = express_1.default.Router();
  *                         direction: Nationality
  *                         example: American
  */
-router.get("/", directors_controller_1.getDirectors);
+router.get("/", directors_controller_1.default.getDirectors);
 /**
  * @swagger
  * '/api/v1/directors/{id}':
@@ -88,5 +88,5 @@ router.get("/", directors_controller_1.getDirectors);
  *                       direction: Nationality
  *                       example: American
  */
-router.get("/:director_id", directors_controller_1.getDirectorById);
+router.get("/:director_id", directors_controller_1.default.getDirectorById);
 exports.default = router;

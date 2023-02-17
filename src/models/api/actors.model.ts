@@ -1,7 +1,7 @@
 import { PreparedStatement as PS } from "pg-promise"
-import { db } from "../utils/dbconnect"
+import { db } from "../../utils/dbconnect"
 
-interface actorsReturn {
+interface Actor {
     actor_id: number
     first_name: string
     last_name: string
@@ -9,7 +9,7 @@ interface actorsReturn {
     date_of_birth: Date
 }
 
-export const getActorById = async (actorId: string): Promise<actorsReturn> => {
+const getActorById = async (actorId: string): Promise<Actor> => {
     const getActorByID = new PS({
         name: "get-actor-by-id",
         text: "SELECT * FROM actors WHERE actor_id = $1",
@@ -18,7 +18,7 @@ export const getActorById = async (actorId: string): Promise<actorsReturn> => {
     return await db.one(getActorByID)
 }
 
-export const getActors = async (): Promise<actorsReturn[]> => {
+const getActors = async (): Promise<Actor[]> => {
     const getActors = new PS({
         name: "get-actors",
         text: "SELECT * FROM actors",

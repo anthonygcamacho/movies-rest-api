@@ -3,7 +3,7 @@
  */
 
 import express from "express"
-import { healthCheckController } from "../../../controllers/api/v1/healthcheck.controller"
+import { healthCheckController } from "../../../controllers/api/healthcheck.controller"
 
 // -------------------------------------------------------------------------------
 

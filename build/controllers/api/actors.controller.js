@@ -12,10 +12,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getActors = exports.getActorById = void 0;
-const errorHandling_1 = __importDefault(require("../../../utils/errorHandling"));
-const ErrorHandlingGeneral_type_1 = require("../../../types/ErrorHandlingGeneral.type");
-const actors_model_1 = __importDefault(require("../../../models/actors.model"));
+const errorHandling_1 = __importDefault(require("../../utils/errorHandling"));
+const ErrorHandlingGeneral_type_1 = require("../../types/ErrorHandlingGeneral.type");
+const actors_model_1 = __importDefault(require("../../models/api/actors.model"));
 // -------------------------------------------------------------------------------
 const getActorById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -30,7 +29,6 @@ const getActorById = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         }
     }
 });
-exports.getActorById = getActorById;
 const getActors = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const response = yield actors_model_1.default.getActors();
@@ -42,8 +40,7 @@ const getActors = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         }
     }
 });
-exports.getActors = getActors;
 exports.default = {
-    getActorById: exports.getActorById,
-    getActors: exports.getActors,
+    getActorById,
+    getActors,
 };

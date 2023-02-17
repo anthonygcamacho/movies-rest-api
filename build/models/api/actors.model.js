@@ -9,9 +9,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getActors = exports.getActorById = void 0;
 const pg_promise_1 = require("pg-promise");
-const dbconnect_1 = require("../utils/dbconnect");
+const dbconnect_1 = require("../../utils/dbconnect");
 const getActorById = (actorId) => __awaiter(void 0, void 0, void 0, function* () {
     const getActorByID = new pg_promise_1.PreparedStatement({
         name: "get-actor-by-id",
@@ -20,7 +19,6 @@ const getActorById = (actorId) => __awaiter(void 0, void 0, void 0, function* ()
     });
     return yield dbconnect_1.db.one(getActorByID);
 });
-exports.getActorById = getActorById;
 const getActors = () => __awaiter(void 0, void 0, void 0, function* () {
     const getActors = new pg_promise_1.PreparedStatement({
         name: "get-actors",
@@ -28,8 +26,7 @@ const getActors = () => __awaiter(void 0, void 0, void 0, function* () {
     });
     return yield dbconnect_1.db.many(getActors);
 });
-exports.getActors = getActors;
 exports.default = {
-    getActorById: exports.getActorById,
-    getActors: exports.getActors,
+    getActorById,
+    getActors,
 };

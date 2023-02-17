@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const actors_controller_1 = require("../../../controllers/api/v1/actors.controller");
+const actors_controller_1 = __importDefault(require("../../../controllers/api/actors.controller"));
 // -------------------------------------------------------------------------------
 const router = express_1.default.Router();
 /**
@@ -48,7 +48,7 @@ const router = express_1.default.Router();
  *                         description: Birth date
  *                         example: 1978-05-12T07:00:00.000Z
  */
-router.get("/", actors_controller_1.getActors);
+router.get("/", actors_controller_1.default.getActors);
 /**
  * @swagger
  * '/api/v1/actors/{id}':
@@ -88,5 +88,5 @@ router.get("/", actors_controller_1.getActors);
  *                       description: Birth date
  *                       example: 1978-05-12T07:00:00.000Z
  */
-router.get("/:actorId", actors_controller_1.getActorById);
+router.get("/:actorId", actors_controller_1.default.getActorById);
 exports.default = router;
