@@ -12,23 +12,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getMovies = exports.getMovieById = void 0;
-const pg_promise_1 = require("pg-promise");
-const dbconnect_1 = require("../../utils/dbconnect");
 const errorHandling_1 = __importDefault(require("../../utils/errorHandling"));
 const ErrorHandlingGeneral_type_1 = require("../../types/ErrorHandlingGeneral.type");
+const movies_model_1 = __importDefault(require("../../models/api/movies.model"));
 // -------------------------------------------------------------------------------
 const getMovieById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    // const actorID = "1 OR (2=2)" // test for sql injection and error handling
-    const movieID = req.params.movie_id;
-    const getMovieByID = new pg_promise_1.PreparedStatement({
-        name: "get-movie-by-id",
-        text: "SELECT * FROM movies WHERE movie_id = $1",
-        values: [movieID],
-    });
     try {
-        const response = yield dbconnect_1.db.one(getMovieByID);
-        res.status(200).json(response);
+        const movieID = req.params.movie_id;
+        const results = yield movies_model_1.default.getMovieById(movieID);
+        res.status(200).json(results);
     }
     catch (err) {
         if ((0, ErrorHandlingGeneral_type_1.isErrorHandlingGeneral)(err)) {
@@ -36,15 +28,10 @@ const getMovieById = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         }
     }
 });
-exports.getMovieById = getMovieById;
 const getMovies = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const getMovies = new pg_promise_1.PreparedStatement({
-        name: "get-movies",
-        text: "SELECT * FROM movies",
-    });
     try {
-        const response = yield dbconnect_1.db.many(getMovies);
-        res.status(200).json(response);
+        const results = yield movies_model_1.default.getMovies();
+        res.status(200).json(results);
     }
     catch (err) {
         if ((0, ErrorHandlingGeneral_type_1.isErrorHandlingGeneral)(err)) {
@@ -52,4 +39,7 @@ const getMovies = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         }
     }
 });
-exports.getMovies = getMovies;
+exports.default = {
+    getMovieById,
+    getMovies,
+};

@@ -20,8 +20,8 @@ const getActorById = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     try {
         // const actorId = "1 OR (2=2)" // test for sql injection and error handling
         const actorId = req.params.actorId;
-        const response = yield actors_model_1.default.getActorById(actorId);
-        res.status(200).json(response);
+        const results = yield actors_model_1.default.getActorById(actorId);
+        res.status(200).json(results);
     }
     catch (err) {
         if ((0, ErrorHandlingGeneral_type_1.isErrorHandlingGeneral)(err)) {
@@ -31,8 +31,8 @@ const getActorById = (req, res) => __awaiter(void 0, void 0, void 0, function* (
 });
 const getActors = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield actors_model_1.default.getActors();
-        res.status(200).json(response);
+        const results = yield actors_model_1.default.getActors();
+        res.status(200).json(results);
     }
     catch (err) {
         if ((0, ErrorHandlingGeneral_type_1.isErrorHandlingGeneral)(err)) {

@@ -1,24 +1,34 @@
 import { PreparedStatement as PS } from "pg-promise"
-import { db } from "../utils/dbconnect"
+import { db } from "../../utils/dbconnect"
 
-// export const getActorById = async (actorId: string) => {
-//     const getActorByID = new PS({
-//         name: "get-actor-by-id",
-//         text: "SELECT * FROM actors WHERE actor_id = $1",
-//         values: [actorId],
-//     })
-//     return await db.one(getActorByID)
-// }
+interface Movie {
+    movie_id: number
+    movie_name: string
+    movie_length: number
+    movie_lang: string
+    release_date: Date
+    age_certificate: string
+    director_id: number
+}
 
-// export const getActors = async () => {
-//     const getActors = new PS({
-//         name: "get-actors",
-//         text: "SELECT * FROM actors",
-//     })
-//     return await db.many(getActors)
-// }
+const getMovieById = async (movieID: string): Promise<Movie> => {
+    const getMovieByID = new PS({
+        name: "get-movie-by-id",
+        text: "SELECT * FROM movies WHERE movie_id = $1",
+        values: [movieID],
+    })
+    return await db.one(getMovieByID)
+}
 
-// export default {
-//     getActorById,
-//     getActors,
-// }
+const getMovies = async (): Promise<Movie[]> => {
+    const getMovies = new PS({
+        name: "get-movies",
+        text: "SELECT * FROM movies",
+    })
+    return await db.many(getMovies)
+}
+
+export default {
+    getMovieById,
+    getMovies,
+}

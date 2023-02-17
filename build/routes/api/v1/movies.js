@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const movies_controller_1 = require("../../../controllers/api/movies.controller");
+const movies_controller_1 = __importDefault(require("../../../controllers/api/movies.controller"));
 // -------------------------------------------------------------------------------
 const router = express_1.default.Router();
 /**
@@ -56,7 +56,7 @@ const router = express_1.default.Router();
  *                         description: The director ID
  *                         example: 1
  */
-router.get("/", movies_controller_1.getMovies);
+router.get("/", movies_controller_1.default.getMovies);
 /**
  * @swagger
  * '/api/v1/movies/{id}':
@@ -104,5 +104,5 @@ router.get("/", movies_controller_1.getMovies);
  *                       description: The director ID
  *                       example: 1
  */
-router.get("/:movie_id", movies_controller_1.getMovieById);
+router.get("/:movie_id", movies_controller_1.default.getMovieById);
 exports.default = router;

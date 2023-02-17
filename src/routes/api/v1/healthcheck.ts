@@ -1,7 +1,3 @@
-/**
- * http://localhost:3000/api/v1/healthcheck/status
- */
-
 import express from "express"
 import { healthCheckController } from "../../../controllers/api/healthcheck.controller"
 

@@ -1,7 +1,4 @@
 "use strict";
-/**
- * http://localhost:3000/api/v1/healthcheck/status
- */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };

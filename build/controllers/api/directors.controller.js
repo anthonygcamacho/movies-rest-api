@@ -19,8 +19,8 @@ const directors_model_1 = __importDefault(require("../../models/api/directors.mo
 const getDirectorById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const directorID = req.params.director_id;
-        const response = yield directors_model_1.default.getDirectorById(directorID);
-        res.status(200).json(response);
+        const results = yield directors_model_1.default.getDirectorById(directorID);
+        res.status(200).json(results);
     }
     catch (err) {
         if ((0, ErrorHandlingGeneral_type_1.isErrorHandlingGeneral)(err)) {
@@ -30,8 +30,8 @@ const getDirectorById = (req, res) => __awaiter(void 0, void 0, void 0, function
 });
 const getDirectors = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield directors_model_1.default.getDirectors();
-        res.status(200).json(response);
+        const results = yield directors_model_1.default.getDirectors();
+        res.status(200).json(results);
     }
     catch (err) {
         if ((0, ErrorHandlingGeneral_type_1.isErrorHandlingGeneral)(err)) {
