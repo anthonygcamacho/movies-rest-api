@@ -88,5 +88,5 @@ router.get("/", directors_controller_1.default.getDirectors);
  *                       direction: Nationality
  *                       example: American
  */
-router.get("/:director_id", directors_controller_1.default.getDirectorById);
+router.get("/:directorId", directors_controller_1.default.getDirectorById);
 exports.default = router;

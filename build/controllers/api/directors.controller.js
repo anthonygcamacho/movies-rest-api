@@ -18,8 +18,8 @@ const directors_model_1 = __importDefault(require("../../models/api/directors.mo
 // -------------------------------------------------------------------------------
 const getDirectorById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const directorID = req.params.director_id;
-        const results = yield directors_model_1.default.getDirectorById(directorID);
+        const directorId = req.params.directorId;
+        const results = yield directors_model_1.default.getDirectorById(directorId);
         res.status(200).json(results);
     }
     catch (err) {

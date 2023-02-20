@@ -103,6 +103,6 @@ router.get("/", moviesController.getMovies)
  *                       description: The director ID
  *                       example: 1
  */
-router.get("/:movie_id", moviesController.getMovieById)
+router.get("/:movieId", moviesController.getMovieById)
 
 export default router

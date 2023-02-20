@@ -11,11 +11,11 @@ interface Movie {
     director_id: number
 }
 
-const getMovieById = async (movieID: string): Promise<Movie> => {
+const getMovieById = async (movieId: string): Promise<Movie> => {
     const getMovieByID = new PS({
         name: "get-movie-by-id",
         text: "SELECT * FROM movies WHERE movie_id = $1",
-        values: [movieID],
+        values: [movieId],
     })
     return await db.one(getMovieByID)
 }

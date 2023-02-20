@@ -104,5 +104,5 @@ router.get("/", movies_controller_1.default.getMovies);
  *                       description: The director ID
  *                       example: 1
  */
-router.get("/:movie_id", movies_controller_1.default.getMovieById);
+router.get("/:movieId", movies_controller_1.default.getMovieById);
 exports.default = router;

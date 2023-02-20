@@ -11,11 +11,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const pg_promise_1 = require("pg-promise");
 const dbconnect_1 = require("../../utils/dbconnect");
-const getMovieById = (movieID) => __awaiter(void 0, void 0, void 0, function* () {
+const getMovieById = (movieId) => __awaiter(void 0, void 0, void 0, function* () {
     const getMovieByID = new pg_promise_1.PreparedStatement({
         name: "get-movie-by-id",
         text: "SELECT * FROM movies WHERE movie_id = $1",
-        values: [movieID],
+        values: [movieId],
     });
     return yield dbconnect_1.db.one(getMovieByID);
 });

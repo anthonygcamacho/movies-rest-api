@@ -9,11 +9,11 @@ interface Director {
     nationality: string
 }
 
-const getDirectorById = async (directorID: string): Promise<Director> => {
+const getDirectorById = async (directorId: string): Promise<Director> => {
     const getDirectorById = new PS({
         name: "get-director-by-id",
         text: "SELECT * FROM directors WHERE director_id = $1",
-        values: [directorID],
+        values: [directorId],
     })
     return await db.one(getDirectorById)
 }

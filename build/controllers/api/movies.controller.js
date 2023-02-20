@@ -18,8 +18,8 @@ const movies_model_1 = __importDefault(require("../../models/api/movies.model"))
 // -------------------------------------------------------------------------------
 const getMovieById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const movieID = req.params.movie_id;
-        const results = yield movies_model_1.default.getMovieById(movieID);
+        const movieId = req.params.movieId;
+        const results = yield movies_model_1.default.getMovieById(movieId);
         res.status(200).json(results);
     }
     catch (err) {

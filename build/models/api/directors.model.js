@@ -11,11 +11,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const pg_promise_1 = require("pg-promise");
 const dbconnect_1 = require("../../utils/dbconnect");
-const getDirectorById = (directorID) => __awaiter(void 0, void 0, void 0, function* () {
+const getDirectorById = (directorId) => __awaiter(void 0, void 0, void 0, function* () {
     const getDirectorById = new pg_promise_1.PreparedStatement({
         name: "get-director-by-id",
         text: "SELECT * FROM directors WHERE director_id = $1",
-        values: [directorID],
+        values: [directorId],
     });
     return yield dbconnect_1.db.one(getDirectorById);
 });

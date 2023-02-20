@@ -9,8 +9,8 @@ import moviesModel from "../../models/api/movies.model"
 
 const getMovieById: RequestHandler = async (req, res): Promise<void> => {
     try {
-        const movieID = req.params.movie_id
-        const results = await moviesModel.getMovieById(movieID)
+        const movieId = req.params.movieId
+        const results = await moviesModel.getMovieById(movieId)
         res.status(200).json(results)
     } catch (err) {
         if (isErrorHandlingGeneral(err)) {

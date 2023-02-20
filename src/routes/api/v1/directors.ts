@@ -87,6 +87,6 @@ router.get("/", directorsController.getDirectors)
  *                       direction: Nationality
  *                       example: American
  */
-router.get("/:director_id", directorsController.getDirectorById)
+router.get("/:directorId", directorsController.getDirectorById)
 
 export default router
