@@ -24,7 +24,7 @@
 			"response": []
 		},
 		{
-			"name": "Home",
+			"name": "home",
 			"request": {
 				"method": "GET",
 				"header": [],
