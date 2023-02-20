@@ -7,23 +7,6 @@
 	},
 	"item": [
 		{
-			"name": "test",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/chatgpt",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"chatgpt"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "home",
 			"request": {
 				"method": "GET",
