@@ -12,12 +12,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const pg_promise_1 = require("pg-promise");
 const dbconnect_1 = require("../../utils/dbconnect");
 const getActorById = (actorId) => __awaiter(void 0, void 0, void 0, function* () {
-    const getActorByID = new pg_promise_1.PreparedStatement({
+    // Test SQL Injection
+    // actorId = "1 OR (2=2)"
+    // return await db.query(`SELECT * FROM actors WHERE actor_id = ${actorId}`)
+    const getActorById = new pg_promise_1.PreparedStatement({
         name: "get-actor-by-id",
         text: "SELECT * FROM actors WHERE actor_id = $1",
         values: [actorId],
     });
-    return yield dbconnect_1.db.one(getActorByID);
+    return yield dbconnect_1.db.one(getActorById);
 });
 const getActors = () => __awaiter(void 0, void 0, void 0, function* () {
     const getActors = new pg_promise_1.PreparedStatement({

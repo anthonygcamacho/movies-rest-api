@@ -7,7 +7,6 @@ import actorsModel from "../../models/api/actors.model"
 
 const getActorById: RequestHandler = async (req, res): Promise<void> => {
     try {
-        // const actorId = "1 OR (2=2)" // test for sql injection and error handling
         const actorId = req.params.actorId
         const results = await actorsModel.getActorById(actorId)
         res.status(200).json(results)

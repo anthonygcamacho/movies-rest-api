@@ -10,12 +10,15 @@ interface Actor {
 }
 
 const getActorById = async (actorId: string): Promise<Actor> => {
-    const getActorByID = new PS({
+    // Test SQL Injection
+    // actorId = "1 OR (2=2)"
+    // return await db.query(`SELECT * FROM actors WHERE actor_id = ${actorId}`)
+    const getActorById = new PS({
         name: "get-actor-by-id",
         text: "SELECT * FROM actors WHERE actor_id = $1",
         values: [actorId],
     })
-    return await db.one(getActorByID)
+    return await db.one(getActorById)
 }
 
 const getActors = async (): Promise<Actor[]> => {

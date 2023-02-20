@@ -18,7 +18,6 @@ const actors_model_1 = __importDefault(require("../../models/api/actors.model"))
 // -------------------------------------------------------------------------------
 const getActorById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        // const actorId = "1 OR (2=2)" // test for sql injection and error handling
         const actorId = req.params.actorId;
         const results = yield actors_model_1.default.getActorById(actorId);
         res.status(200).json(results);
