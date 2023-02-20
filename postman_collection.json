@@ -7,36 +7,47 @@
 	},
 	"item": [
 		{
-			"name": "Home",
+			"name": "test",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000",
-					"protocol": "http",
+					"raw": "{{baseUrl}}/chatgpt",
 					"host": [
-						"localhost"
+						"{{baseUrl}}"
 					],
-					"port": "3000"
+					"path": [
+						"chatgpt"
+					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "api/v1/healthcheck",
+			"name": "Home",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/v1/healthcheck",
-					"protocol": "http",
+					"raw": "{{baseUrl}}",
 					"host": [
-						"localhost"
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "healthcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlApi}}/healthcheck",
+					"host": [
+						"{{baseUrlApi}}"
 					],
-					"port": "3000",
 					"path": [
-						"api",
-						"v1",
 						"healthcheck"
 					]
 				}
@@ -44,20 +55,16 @@
 			"response": []
 		},
 		{
-			"name": "api/v1/actors",
+			"name": "actors",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/v1/actors",
-					"protocol": "http",
+					"raw": "{{baseUrlApi}}/actors",
 					"host": [
-						"localhost"
+						"{{baseUrlApi}}"
 					],
-					"port": "3000",
 					"path": [
-						"api",
-						"v1",
 						"actors"
 					]
 				}
@@ -65,25 +72,140 @@
 			"response": []
 		},
 		{
-			"name": "api/v1/directors",
+			"name": "actor by Id",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/v1/directors",
-					"protocol": "http",
+					"raw": "{{baseUrlApi}}/actors/:actorId",
 					"host": [
-						"localhost"
+						"{{baseUrlApi}}"
 					],
-					"port": "3000",
 					"path": [
-						"api",
-						"v1",
+						"actors",
+						":actorId"
+					],
+					"variable": [
+						{
+							"key": "actorId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlApi}}/movies",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movie by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlApi}}/movies/:movieId",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"movies",
+						":movieId"
+					],
+					"variable": [
+						{
+							"key": "movieId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "directors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlApi}}/directors",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
 						"directors"
 					]
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "director by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlApi}}/directors/:directorId",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"directors",
+						":directorId"
+					],
+					"variable": [
+						{
+							"key": "directorId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000"
+		},
+		{
+			"key": "baseUrlApi",
+			"value": "http://localhost:3000/api/v1"
 		}
 	]
 }
