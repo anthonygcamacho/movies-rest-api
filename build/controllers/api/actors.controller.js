@@ -16,17 +16,6 @@ const errorHandling_1 = __importDefault(require("../../utils/errorHandling"));
 const ErrorHandlingGeneral_type_1 = require("../../types/ErrorHandlingGeneral.type");
 const actors_model_1 = __importDefault(require("../../models/api/actors.model"));
 // -------------------------------------------------------------------------------
-const getActorsMoviesById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    // try {
-    //     const actorId = req.params.actorId
-    //     const results = await actorsModel.getActorById(actorId)
-    //     res.status(200).json(results)
-    // } catch (err) {
-    //     if (isErrorHandlingGeneral(err)) {
-    //         errorHandling.general(err, res)
-    //     }
-    // }
-});
 const getActorById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const actorId = req.params.actorId;
@@ -42,6 +31,18 @@ const getActorById = (req, res) => __awaiter(void 0, void 0, void 0, function* (
 const getActors = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const results = yield actors_model_1.default.getActors();
+        res.status(200).json(results);
+    }
+    catch (err) {
+        if ((0, ErrorHandlingGeneral_type_1.isErrorHandlingGeneral)(err)) {
+            errorHandling_1.default.general(err, res);
+        }
+    }
+});
+const getActorsMoviesById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const actorId = req.params.actorId;
+        const results = yield actors_model_1.default.getActorsMoviesById(actorId);
         res.status(200).json(results);
     }
     catch (err) {
