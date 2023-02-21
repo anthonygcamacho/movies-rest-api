@@ -16,6 +16,17 @@ const errorHandling_1 = __importDefault(require("../../utils/errorHandling"));
 const ErrorHandlingGeneral_type_1 = require("../../types/ErrorHandlingGeneral.type");
 const actors_model_1 = __importDefault(require("../../models/api/actors.model"));
 // -------------------------------------------------------------------------------
+const getActorsMoviesById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    // try {
+    //     const actorId = req.params.actorId
+    //     const results = await actorsModel.getActorById(actorId)
+    //     res.status(200).json(results)
+    // } catch (err) {
+    //     if (isErrorHandlingGeneral(err)) {
+    //         errorHandling.general(err, res)
+    //     }
+    // }
+});
 const getActorById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const actorId = req.params.actorId;
@@ -40,6 +51,7 @@ const getActors = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.default = {
+    getActorsMoviesById,
     getActorById,
     getActors,
 };

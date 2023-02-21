@@ -89,4 +89,5 @@ router.get("/", actors_controller_1.default.getActors);
  *                       example: 1978-05-12T07:00:00.000Z
  */
 router.get("/:actorId", actors_controller_1.default.getActorById);
+router.get("/:actorId/movies", actors_controller_1.default.getActorsMoviesById);
 exports.default = router;

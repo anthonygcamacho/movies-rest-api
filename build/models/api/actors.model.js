@@ -11,25 +11,34 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const pg_promise_1 = require("pg-promise");
 const dbconnect_1 = require("../../utils/dbconnect");
+const getActorsMoviesById = (actorId) => __awaiter(void 0, void 0, void 0, function* () {
+    const getActorByIdQuery = new pg_promise_1.PreparedStatement({
+        name: "get-actor-by-id",
+        text: "SELECT * FROM movies mov INNER JOIN actors act ON mov.actor_id = act.actor_id WHERE mov.actor_id = = $1",
+        values: [actorId],
+    });
+    return yield dbconnect_1.db.one(getActorByIdQuery);
+});
 const getActorById = (actorId) => __awaiter(void 0, void 0, void 0, function* () {
     // Test SQL Injection
     // actorId = "1 OR (2=2)"
     // return await db.query(`SELECT * FROM actors WHERE actor_id = ${actorId}`)
-    const getActorById = new pg_promise_1.PreparedStatement({
+    const getActorByIdQuery = new pg_promise_1.PreparedStatement({
         name: "get-actor-by-id",
         text: "SELECT * FROM actors WHERE actor_id = $1",
         values: [actorId],
     });
-    return yield dbconnect_1.db.one(getActorById);
+    return yield dbconnect_1.db.one(getActorByIdQuery);
 });
 const getActors = () => __awaiter(void 0, void 0, void 0, function* () {
-    const getActors = new pg_promise_1.PreparedStatement({
+    const getActorsQuery = new pg_promise_1.PreparedStatement({
         name: "get-actors",
         text: "SELECT * FROM actors",
     });
-    return yield dbconnect_1.db.many(getActors);
+    return yield dbconnect_1.db.many(getActorsQuery);
 });
 exports.default = {
+    getActorsMoviesById,
     getActorById,
     getActors,
 };

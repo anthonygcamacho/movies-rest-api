@@ -12,20 +12,20 @@ interface Movie {
 }
 
 const getMovieById = async (movieId: string): Promise<Movie> => {
-    const getMovieByID = new PS({
+    const getMovieByIDQuery = new PS({
         name: "get-movie-by-id",
         text: "SELECT * FROM movies WHERE movie_id = $1",
         values: [movieId],
     })
-    return await db.one(getMovieByID)
+    return await db.one(getMovieByIDQuery)
 }
 
 const getMovies = async (): Promise<Movie[]> => {
-    const getMovies = new PS({
+    const getMoviesQuery = new PS({
         name: "get-movies",
         text: "SELECT * FROM movies",
     })
-    return await db.many(getMovies)
+    return await db.many(getMoviesQuery)
 }
 
 export default {

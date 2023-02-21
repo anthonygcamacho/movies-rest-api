@@ -12,19 +12,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const pg_promise_1 = require("pg-promise");
 const dbconnect_1 = require("../../utils/dbconnect");
 const getMovieById = (movieId) => __awaiter(void 0, void 0, void 0, function* () {
-    const getMovieByID = new pg_promise_1.PreparedStatement({
+    const getMovieByIDQuery = new pg_promise_1.PreparedStatement({
         name: "get-movie-by-id",
         text: "SELECT * FROM movies WHERE movie_id = $1",
         values: [movieId],
     });
-    return yield dbconnect_1.db.one(getMovieByID);
+    return yield dbconnect_1.db.one(getMovieByIDQuery);
 });
 const getMovies = () => __awaiter(void 0, void 0, void 0, function* () {
-    const getMovies = new pg_promise_1.PreparedStatement({
+    const getMoviesQuery = new pg_promise_1.PreparedStatement({
         name: "get-movies",
         text: "SELECT * FROM movies",
     });
-    return yield dbconnect_1.db.many(getMovies);
+    return yield dbconnect_1.db.many(getMoviesQuery);
 });
 exports.default = {
     getMovieById,

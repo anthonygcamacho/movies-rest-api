@@ -12,19 +12,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const pg_promise_1 = require("pg-promise");
 const dbconnect_1 = require("../../utils/dbconnect");
 const getDirectorById = (directorId) => __awaiter(void 0, void 0, void 0, function* () {
-    const getDirectorById = new pg_promise_1.PreparedStatement({
+    const getDirectorByIdQuery = new pg_promise_1.PreparedStatement({
         name: "get-director-by-id",
         text: "SELECT * FROM directors WHERE director_id = $1",
         values: [directorId],
     });
-    return yield dbconnect_1.db.one(getDirectorById);
+    return yield dbconnect_1.db.one(getDirectorByIdQuery);
 });
 const getDirectors = () => __awaiter(void 0, void 0, void 0, function* () {
-    const getDirectors = new pg_promise_1.PreparedStatement({
+    const getDirectorsQuery = new pg_promise_1.PreparedStatement({
         name: "get-directors",
         text: "SELECT * FROM directors",
     });
-    return yield dbconnect_1.db.many(getDirectors);
+    return yield dbconnect_1.db.many(getDirectorsQuery);
 });
 exports.default = {
     getDirectorById,

@@ -10,20 +10,20 @@ interface Director {
 }
 
 const getDirectorById = async (directorId: string): Promise<Director> => {
-    const getDirectorById = new PS({
+    const getDirectorByIdQuery = new PS({
         name: "get-director-by-id",
         text: "SELECT * FROM directors WHERE director_id = $1",
         values: [directorId],
     })
-    return await db.one(getDirectorById)
+    return await db.one(getDirectorByIdQuery)
 }
 
 const getDirectors = async (): Promise<Director[]> => {
-    const getDirectors = new PS({
+    const getDirectorsQuery = new PS({
         name: "get-directors",
         text: "SELECT * FROM directors",
     })
-    return await db.many(getDirectors)
+    return await db.many(getDirectorsQuery)
 }
 
 export default {
