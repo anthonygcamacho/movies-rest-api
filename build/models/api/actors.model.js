@@ -35,7 +35,6 @@ const getActorsByMovieId = (movieId) => __awaiter(void 0, void 0, void 0, functi
         text: "SELECT ac.actor_id, ac.first_name FROM actors ac JOIN movies_actors ma ON ma.actor_id = ac.actor_id WHERE ma.movie_id = $1",
         values: [movieId],
     });
-    console.log(getActorsByMovieIdQuery);
     return yield dbconnect_1.db.many(getActorsByMovieIdQuery);
 });
 exports.default = {
