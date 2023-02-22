@@ -56,9 +56,21 @@
 		},
 		{
 			"name": "actor by Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "{{baseUrlApi}}/actors/:actorId",
 					"host": [
@@ -71,6 +83,84 @@
 					"variable": [
 						{
 							"key": "actorId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actors by movie Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrlApi}}/movies/:movieId/actors",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"movies",
+						":movieId",
+						"actors"
+					],
+					"variable": [
+						{
+							"key": "movieId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "directors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlApi}}/directors",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"directors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "director by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlApi}}/directors/:directorId",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"directors",
+						":directorId"
+					],
+					"variable": [
+						{
+							"key": "directorId",
 							"value": "1"
 						}
 					]
@@ -120,40 +210,98 @@
 			"response": []
 		},
 		{
-			"name": "directors",
+			"name": "movies by actor Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "{{baseUrlApi}}/directors",
+					"raw": "{{baseUrlApi}}/actors/:actorId/movies",
 					"host": [
 						"{{baseUrlApi}}"
 					],
 					"path": [
-						"directors"
+						"actors",
+						":actorId",
+						"movies"
+					],
+					"variable": [
+						{
+							"key": "actorId",
+							"value": "89"
+						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "director by Id",
+			"name": "movies by director Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "{{baseUrlApi}}/directors/:directorId",
+					"raw": "{{baseUrlApi}}/directors/:directorId/movies",
 					"host": [
 						"{{baseUrlApi}}"
 					],
 					"path": [
 						"directors",
-						":directorId"
+						":directorId",
+						"movies"
 					],
 					"variable": [
 						{
 							"key": "directorId",
-							"value": "1"
+							"value": "26"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "revenue by movie Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlApi}}/movies/:movieId/revenue",
+					"host": [
+						"{{baseUrlApi}}"
+					],
+					"path": [
+						"movies",
+						":movieId",
+						"revenue"
+					],
+					"variable": [
+						{
+							"key": "movieId",
+							"value": "10"
 						}
 					]
 				}
