@@ -27,24 +27,3 @@ router.use("/directors", directors_1.default);
 // Movies
 router.use("/movies", movies_1.default);
 exports.default = router;
-/*
-
-https://www.youtube.com/watch?v=huwyAP75bUs
-https://www.youtube.com/watch?v=ch_8h1RQ3Jg
-https://www.youtube.com/watch?v=2i6_Ibk7b7I
-
-/actors
-/actors/:actorID
-/actors/:actorID/movies
-
-/directors
-/directors/:directorID
-/directors/:directorID/movies
-
-/movies
-/movies/:movieID
-/movies/:movieID/actors
-/movies/:movieID/director
-/movies/:movieID/revenue
-
-*/

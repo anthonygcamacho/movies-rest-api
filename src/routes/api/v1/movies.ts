@@ -108,4 +108,6 @@ router.get("/:movieId", moviesController.getMovieById)
 
 router.get("/:movieId/actors", actorsController.getActorsByMovieId)
 
+router.get("/:movieId/revenue", moviesController.getRevenueByMovieId)
+
 export default router

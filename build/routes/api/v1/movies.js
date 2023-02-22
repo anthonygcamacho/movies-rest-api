@@ -107,4 +107,5 @@ router.get("/", movies_controller_1.default.getMovies);
  */
 router.get("/:movieId", movies_controller_1.default.getMovieById);
 router.get("/:movieId/actors", actors_controller_1.default.getActorsByMovieId);
+router.get("/:movieId/revenue", movies_controller_1.default.getRevenueByMovieId);
 exports.default = router;

@@ -40,10 +40,18 @@ const getMoviesByDirectorId = (directorId) => __awaiter(void 0, void 0, void 0, 
         text: "SELECT mo.movie_id, mo.movie_name FROM movies mo JOIN directors dir ON mo.director_id = dir.director_id WHERE mo.director_id = $1",
         values: [directorId],
     });
-    console.log(getMoviesByDirectorIdQuery);
     return yield dbconnect_1.db.many(getMoviesByDirectorIdQuery);
 });
+const getRevenueByMovieId = (movieId) => __awaiter(void 0, void 0, void 0, function* () {
+    const getRevenueByMovieIdQuery = new pg_promise_1.PreparedStatement({
+        name: "get-revenue-by-movie-id",
+        text: "SELECT mo.movie_id, mo.movie_name, mr.domestic_takings, mr.international_takings FROM movie_revenues mr JOIN movies mo USING (movie_id) WHERE mr.movie_id = $1",
+        values: [movieId],
+    });
+    return yield dbconnect_1.db.many(getRevenueByMovieIdQuery);
+});
 exports.default = {
+    getRevenueByMovieId,
     getMoviesByDirectorId,
     getMoviesByActorId,
     getMovieById,

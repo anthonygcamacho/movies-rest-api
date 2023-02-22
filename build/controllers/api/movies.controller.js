@@ -54,7 +54,6 @@ const getMoviesByActorId = (req, res) => __awaiter(void 0, void 0, void 0, funct
 const getMoviesByDirectorId = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const directorId = req.params.directorId;
-        console.log(directorId);
         const results = yield movies_model_1.default.getMoviesByDirectorId(directorId);
         res.status(200).json(results);
     }
@@ -64,7 +63,20 @@ const getMoviesByDirectorId = (req, res) => __awaiter(void 0, void 0, void 0, fu
         }
     }
 });
+const getRevenueByMovieId = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const movieId = req.params.movieId;
+        const results = yield movies_model_1.default.getRevenueByMovieId(movieId);
+        res.status(200).json(results);
+    }
+    catch (err) {
+        if ((0, ErrorHandlingGeneral_type_1.isErrorHandlingGeneral)(err)) {
+            errorHandling_1.default.general(err, res);
+        }
+    }
+});
 exports.default = {
+    getRevenueByMovieId,
     getMoviesByDirectorId,
     getMoviesByActorId,
     getMovieById,

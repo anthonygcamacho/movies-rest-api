@@ -46,7 +46,6 @@ const getMoviesByDirectorId: RequestHandler = async (
 ): Promise<void> => {
     try {
         const directorId = req.params.directorId
-        console.log(directorId)
         const results = await moviesModel.getMoviesByDirectorId(directorId)
         res.status(200).json(results)
     } catch (err) {
@@ -56,7 +55,20 @@ const getMoviesByDirectorId: RequestHandler = async (
     }
 }
 
+const getRevenueByMovieId: RequestHandler = async (req, res): Promise<void> => {
+    try {
+        const movieId = req.params.movieId
+        const results = await moviesModel.getRevenueByMovieId(movieId)
+        res.status(200).json(results)
+    } catch (err) {
+        if (isErrorHandlingGeneral(err)) {
+            errorHandling.general(err, res)
+        }
+    }
+}
+
 export default {
+    getRevenueByMovieId,
     getMoviesByDirectorId,
     getMoviesByActorId,
     getMovieById,
