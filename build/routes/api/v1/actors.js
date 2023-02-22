@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const actors_controller_1 = __importDefault(require("../../../controllers/api/actors.controller"));
+const movies_controller_1 = __importDefault(require("../../../controllers/api/movies.controller"));
 // -------------------------------------------------------------------------------
 const router = express_1.default.Router();
 /**
@@ -89,5 +90,5 @@ router.get("/", actors_controller_1.default.getActors);
  *                       example: 1978-05-12T07:00:00.000Z
  */
 router.get("/:actorId", actors_controller_1.default.getActorById);
-router.get("/:actorId/movies", actors_controller_1.default.getActorsMoviesById);
+router.get("/:actorId/movies", movies_controller_1.default.getMoviesByActorId);
 exports.default = router;

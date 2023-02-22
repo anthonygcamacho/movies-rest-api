@@ -39,7 +39,34 @@ const getMovies = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         }
     }
 });
+const getMoviesByActorId = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const actorId = req.params.actorId;
+        const results = yield movies_model_1.default.getMoviesByActorId(actorId);
+        res.status(200).json(results);
+    }
+    catch (err) {
+        if ((0, ErrorHandlingGeneral_type_1.isErrorHandlingGeneral)(err)) {
+            errorHandling_1.default.general(err, res);
+        }
+    }
+});
+const getMoviesByDirectorId = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const directorId = req.params.directorId;
+        console.log(directorId);
+        const results = yield movies_model_1.default.getMoviesByDirectorId(directorId);
+        res.status(200).json(results);
+    }
+    catch (err) {
+        if ((0, ErrorHandlingGeneral_type_1.isErrorHandlingGeneral)(err)) {
+            errorHandling_1.default.general(err, res);
+        }
+    }
+});
 exports.default = {
+    getMoviesByDirectorId,
+    getMoviesByActorId,
     getMovieById,
     getMovies,
 };

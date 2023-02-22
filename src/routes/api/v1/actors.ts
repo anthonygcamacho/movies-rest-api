@@ -1,5 +1,6 @@
 import express from "express"
 import actorsController from "../../../controllers/api/actors.controller"
+import moviesController from "../../../controllers/api/movies.controller"
 
 // -------------------------------------------------------------------------------
 
@@ -89,6 +90,6 @@ router.get("/", actorsController.getActors)
  */
 router.get("/:actorId", actorsController.getActorById)
 
-router.get("/:actorId/movies", actorsController.getActorsMoviesById)
+router.get("/:actorId/movies", moviesController.getMoviesByActorId)
 
 export default router

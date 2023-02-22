@@ -1,5 +1,6 @@
 import express from "express"
 import directorsController from "../../../controllers/api/directors.controller"
+import moviesController from "../../../controllers/api/movies.controller"
 
 // -------------------------------------------------------------------------------
 
@@ -88,5 +89,7 @@ router.get("/", directorsController.getDirectors)
  *                       example: American
  */
 router.get("/:directorId", directorsController.getDirectorById)
+
+router.get("/:directorId/movies", moviesController.getMoviesByDirectorId)
 
 export default router

@@ -29,16 +29,7 @@ const getActors = () => __awaiter(void 0, void 0, void 0, function* () {
     });
     return yield dbconnect_1.db.many(getActorsQuery);
 });
-const getActorsMoviesById = (actorId) => __awaiter(void 0, void 0, void 0, function* () {
-    const getActorsMoviesByIdQuery = new pg_promise_1.PreparedStatement({
-        name: "get-actor-by-id",
-        text: "SELECT mo.movie_name FROM movies mo JOIN movies_actors ma ON ma.movie_id = mo.movie_id WHERE ma.actor_id = $1",
-        values: [actorId],
-    });
-    return yield dbconnect_1.db.many(getActorsMoviesByIdQuery);
-});
 exports.default = {
-    getActorsMoviesById,
     getActorById,
     getActors,
 };
