@@ -1,6 +1,4 @@
 import { RequestHandler } from "express"
-import { PreparedStatement as PS } from "pg-promise"
-import { db } from "../../utils/dbconnect"
 import errorHandling from "../../utils/errorHandling"
 import { isErrorHandlingGeneral } from "../../types/ErrorHandlingGeneral.type"
 import moviesModel from "../../models/api/movies.model"

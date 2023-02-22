@@ -39,7 +39,20 @@ const getActors = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         }
     }
 });
+const getActorsByMovieId = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const moviesId = req.params.movieId;
+        const results = yield actors_model_1.default.getActorsByMovieId(moviesId);
+        res.status(200).json(results);
+    }
+    catch (err) {
+        if ((0, ErrorHandlingGeneral_type_1.isErrorHandlingGeneral)(err)) {
+            errorHandling_1.default.general(err, res);
+        }
+    }
+});
 exports.default = {
+    getActorsByMovieId,
     getActorById,
     getActors,
 };

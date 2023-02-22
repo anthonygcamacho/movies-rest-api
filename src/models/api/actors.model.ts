@@ -29,7 +29,18 @@ const getActors = async (): Promise<Actor[]> => {
     return await db.many(getActorsQuery)
 }
 
+const getActorsByMovieId = async (movieId: string): Promise<Actor[]> => {
+    const getActorsByMovieIdQuery = new PS({
+        name: "get-actors-by-movie-id",
+        text: "SELECT ac.actor_id, ac.first_name FROM actors ac JOIN movies_actors ma ON ma.actor_id = ac.actor_id WHERE ma.movie_id = $1",
+        values: [movieId],
+    })
+    console.log(getActorsByMovieIdQuery)
+    return await db.many(getActorsByMovieIdQuery)
+}
+
 export default {
+    getActorsByMovieId,
     getActorById,
     getActors,
 }

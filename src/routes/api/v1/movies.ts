@@ -1,5 +1,6 @@
 import express from "express"
 import moviesController from "../../../controllers/api/movies.controller"
+import actorsController from "../../../controllers/api/actors.controller"
 
 // -------------------------------------------------------------------------------
 
@@ -104,5 +105,7 @@ router.get("/", moviesController.getMovies)
  *                       example: 1
  */
 router.get("/:movieId", moviesController.getMovieById)
+
+router.get("/:movieId/actors", actorsController.getActorsByMovieId)
 
 export default router

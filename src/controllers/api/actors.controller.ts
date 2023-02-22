@@ -28,7 +28,20 @@ const getActors: RequestHandler = async (req, res): Promise<void> => {
     }
 }
 
+const getActorsByMovieId: RequestHandler = async (req, res): Promise<void> => {
+    try {
+        const moviesId = req.params.movieId
+        const results = await actorsModel.getActorsByMovieId(moviesId)
+        res.status(200).json(results)
+    } catch (err) {
+        if (isErrorHandlingGeneral(err)) {
+            errorHandling.general(err, res)
+        }
+    }
+}
+
 export default {
+    getActorsByMovieId,
     getActorById,
     getActors,
 }
