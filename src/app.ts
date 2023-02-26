@@ -17,8 +17,8 @@ const app = express()
 app.use("/api/v1/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 // // Security
-app.use(helmet())
-app.use(cors())
+// app.use(helmet())
+// app.use(cors())
 
 // // App settings
 app.use(morgan("dev"))
