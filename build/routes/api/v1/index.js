@@ -8,15 +8,15 @@ const healthcheck_1 = __importDefault(require("./healthcheck"));
 const actors_1 = __importDefault(require("./actors"));
 const directors_1 = __importDefault(require("./directors"));
 const movies_1 = __importDefault(require("./movies"));
-const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
-const swagger_1 = require("../../../utils/swagger");
+// import swaggerUi from "swagger-ui-express"
+// import { swaggerSpec } from "../../../utils/swagger"
 // -------------------------------------------------------------------------------
 const router = express_1.default.Router();
 // Swagger page
-router.use("/docs", swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swagger_1.swaggerSpec));
+// router.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 // Swagger Docs in JSON format
 router.get("/docs.json", (req, res) => {
-    res.status(200).json(swagger_1.swaggerSpec);
+    res.status(200).json(swaggerSpec);
 });
 // Healthcheck
 router.use("/healthcheck", healthcheck_1.default);

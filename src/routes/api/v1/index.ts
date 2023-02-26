@@ -3,15 +3,15 @@ import healthcheck from "./healthcheck"
 import actors from "./actors"
 import directors from "./directors"
 import movies from "./movies"
-import swaggerUi from "swagger-ui-express"
-import { swaggerSpec } from "../../../utils/swagger"
+// import swaggerUi from "swagger-ui-express"
+// import { swaggerSpec } from "../../../utils/swagger"
 
 // -------------------------------------------------------------------------------
 
 const router = express.Router()
 
 // Swagger page
-router.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
+// router.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 // Swagger Docs in JSON format
 router.get("/docs.json", (req: Request, res: Response) => {

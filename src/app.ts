@@ -5,11 +5,16 @@ import cors from "cors"
 // import cookieParser from "cookie-parser"
 import morgan from "morgan"
 
+import swaggerUi from "swagger-ui-express"
+import { swaggerSpec } from "./utils/swagger"
+
 import routes from "./routes"
 
 // -------------------------------------------------------------------------------
 
 const app = express()
+
+app.use("/api/v1/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 // // Security
 app.use(helmet())
