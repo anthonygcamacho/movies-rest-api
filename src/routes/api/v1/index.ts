@@ -14,9 +14,9 @@ const router = express.Router()
 // router.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 // Swagger Docs in JSON format
-router.get("/docs.json", (req: Request, res: Response) => {
-    res.status(200).json(swaggerSpec)
-})
+// router.get("/docs.json", (req: Request, res: Response) => {
+//     res.status(200).json(swaggerSpec)
+// })
 
 // Healthcheck
 router.use("/healthcheck", healthcheck)
